@@ -10,6 +10,11 @@
     "bytes": 57
   },
   {
+    "path": ".github/AUTOMATION.md",
+    "sha256": "c9e5a1afca2a2850542e768067213f461286bd2387f9a0f4864a799e10dfb1f6",
+    "bytes": 419
+  },
+  {
     "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
     "sha256": "8453d6a707f5f31c60d489b06ee98343a081550b896f17a25291154a5d5ce7fc",
     "bytes": 1744
@@ -33,11 +38,6 @@
     "path": ".github/PULL_REQUEST_TEMPLATE.md",
     "sha256": "7066f26514d8d900225b0d412176a68ba445096290e47a9acb3a1d936c80da37",
     "bytes": 1135
-  },
-  {
-    "path": ".github/README.md",
-    "sha256": "c9e5a1afca2a2850542e768067213f461286bd2387f9a0f4864a799e10dfb1f6",
-    "bytes": 419
   },
   {
     "path": ".github/workflows/fast-checks.yml",
