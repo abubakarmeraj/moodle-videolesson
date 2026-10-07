@@ -1,0 +1,55 @@
+name: Bug report
+description: Report a reproducible, non-security bug.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not post vulnerabilities here. Report them privately to abubakar.meraj11@gmail.com.
+        Remove credentials, service signing keys, S3 secrets, database/Redis passwords,
+        cookies, presigned URLs and private media from all text, logs and screenshots.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Before submitting
+      options:
+        - label: This is not a vulnerability report and contains no secrets or private media.
+          required: true
+        - label: I searched existing issues for this problem.
+          required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Versions and environment
+      description: Moodle, PHP, plugin, Video Service, OS, storage backend and browser versions.
+    validations:
+      required: true
+  - type: dropdown
+    id: installation
+    attributes:
+      label: Installation method
+      options:
+        - Docker Compose
+        - Native / systemd
+        - Other (describe below)
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Use a minimal independent test case, not customer data.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized logs or screenshots
+      description: Include relevant error codes and timings only; never attach raw session/HAR or resolved secret configuration.

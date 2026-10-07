@@ -1,0 +1,37 @@
+name: Feature request
+description: Propose an improvement and explain the user problem.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        No vulnerability details, credentials, signing keys, S3 secrets, DB/Redis passwords,
+        cookies, presigned URLs or private media. Security reports go privately to abubakar.meraj11@gmail.com.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Before submitting
+      options:
+        - label: This is not a vulnerability report and contains no secrets or private media.
+          required: true
+        - label: I searched existing issues for similar proposals.
+          required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: Who needs this, and what is difficult today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior and alternatives
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Security, storage and compatibility impact
+      description: Note affected installation modes, private-media behavior, quotas or migrations; unknown is acceptable.

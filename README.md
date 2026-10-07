@@ -48,5 +48,25 @@ are developer checks. See [architecture](docs/architecture.md),
 Project-owned code is **GPL-3.0-or-later**; original CodeFortex artwork uses the
 same license. Upstream copyrights and dependency licenses remain intact. See
 [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
-Source preparation is complete, but publication and the final RC1 artifact smoke
-remain separate approval steps.
+
+## Contributing
+
+Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) for development,
+tests, focused pull requests and DCO/Signed-off-by guidance. Follow our
+[Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Issues
+
+[Bugs, feature requests and installation questions](https://github.com/abubakarmeraj/moodle-videolesson/issues/new/choose)
+are welcome. Use the templates and share only sanitized information.
+
+## Security
+
+Read [SECURITY.md](SECURITY.md) for the current private reporting contact.
+**Do not report vulnerabilities through public Issues, Discussions or PRs.**
+
+## License
+
+Project-owned code and original artwork are **GPL-3.0-or-later**. See
+[LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Third-party code and community-policy material retain their respective terms.

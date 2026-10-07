@@ -1,0 +1,47 @@
+name: Installation help
+description: Ask for help with an independent installation.
+title: "[Installation]: "
+labels: [installation, question]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Read CONTRIBUTING.md and installation docs first. Never post credentials, service
+        signing keys, S3 secrets, DB/Redis passwords, cookies, presigned URLs or private media.
+        Vulnerabilities go privately to abubakar.meraj11@gmail.com, not this public form.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Before submitting
+      options:
+        - label: This is not a vulnerability report and contains no secrets or private media.
+          required: true
+  - type: textarea
+    id: versions
+    attributes:
+      label: Versions and environment
+      description: Moodle, PHP, plugin, service, Linux, storage backend and browser versions.
+    validations:
+      required: true
+  - type: dropdown
+    id: installation
+    attributes:
+      label: Installation method
+      options:
+        - Docker Compose
+        - Native / systemd
+        - Other (describe below)
+    validations:
+      required: true
+  - type: textarea
+    id: step
+    attributes:
+      label: Failing step and result
+      description: Include the command name or UI step, expected result and actual result. Remove secret arguments.
+    validations:
+      required: true
+  - type: textarea
+    id: checks
+    attributes:
+      label: Sanitized health / Test Connection result
+      description: Include classifications and relevant logs only. Do not paste connection files, environment files or resolved Compose configuration.

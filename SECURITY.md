@@ -2,9 +2,16 @@
 
 ## Private reporting
 
-**OWNER ACTION BEFORE PUBLICATION:** choose and verify a private security-reporting
-email or private advisory URL, then replace this placeholder. No contact is invented.
-Do not file public issues containing exploit details, credentials or customer data.
+Report suspected security vulnerabilities privately to
+[abubakar.meraj11@gmail.com](mailto:abubakar.meraj11@gmail.com).
+This is the owner-approved temporary contact.
+**Do not report vulnerabilities through public GitHub Issues, Discussions or PRs.**
+Do not post exploit details, credentials or customer data publicly.
+
+Include affected versions, impact and reproducible steps, removing signing keys,
+passwords, credentials, cookies, presigned URLs and private media. If sensitive
+details are essential, first arrange a suitable private channel with the maintainer.
+Investigation/disclosure will be coordinated; RC1 implies no response-time guarantee.
 
 ## Supported line
 

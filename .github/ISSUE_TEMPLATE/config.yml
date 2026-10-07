@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private security report
+    url: mailto:abubakar.meraj11@gmail.com
+    about: Report vulnerabilities privately; never post them in Issues or Discussions.
+  - name: Contributor and development guide
+    url: https://github.com/abubakarmeraj/moodle-videolesson/blob/main/CONTRIBUTING.md
+    about: Read development setup, testing, licensing and DCO expectations.
