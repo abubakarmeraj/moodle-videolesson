@@ -1,0 +1,5 @@
+{{! CodeFortex additions, GPL v3 or later. All dynamic values use Mustache escaping. }}
+<section class="cf-video-region" aria-label="{{name}}">
+    <video id="cf-player" controls playsinline preload="metadata" aria-label="{{name}}"{{#width}} style="--cf-video-aspect: {{width}} / {{height}}"{{/width}}></video>
+    <p id="cf-watch-status" role="status" aria-live="polite"></p>
+</section>

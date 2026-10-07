@@ -1,0 +1,166 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_videolesson/setup_wizard
+
+    Main VideoLesson setup wizard shell with step navigation and partials.
+}}
+
+<div class="videolesson-setup-wizard" id="videolesson-setup-wizard">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">{{#str}}setup:wizard:title, mod_videolesson{{/str}}</h3>
+        </div>
+        <div class="card-body">
+            <!-- Progress Steps -->
+            <div class="setup-progress">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <div class="step-indicator {{#step1complete}}completed{{/step1complete}} {{#step1current}}current{{/step1current}}" data-step="1">
+                            <div class="step-number">
+                                {{#step1complete}}<i class="fa fa-check"></i>{{/step1complete}}
+                                {{^step1complete}}1{{/step1complete}}
+                            </div>
+                            <div class="step-label">{{#str}}setup:step1:title, mod_videolesson{{/str}}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 text-center step-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="step-indicator {{#step2complete}}completed{{/step2complete}} {{#step2current}}current{{/step2current}}" data-step="2">
+                            <div class="step-number">
+                                {{#step2complete}}<i class="fa fa-check"></i>{{/step2complete}}
+                                {{^step2complete}}2{{/step2complete}}
+                            </div>
+                            <div class="step-label">{{#str}}setup:step2:title, mod_videolesson{{/str}}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 text-center step-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="step-indicator {{#step3complete}}completed{{/step3complete}} {{#step3current}}current{{/step3current}}" data-step="3">
+                            <div class="step-number">
+                                {{#step3complete}}<i class="fa fa-check"></i>{{/step3complete}}
+                                {{^step3complete}}3{{/step3complete}}
+                            </div>
+                            <div class="step-label">{{#str}}setup:step3:title, mod_videolesson{{/str}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step Content -->
+            <div class="setup-content">
+                <div class="step-content" id="step-1-content" {{^step1current}}style="display:none;"{{/step1current}}>
+                    {{> mod_videolesson/setup_wizard_step1}}
+                </div>
+                <div class="step-content" id="step-2-content" {{^step2current}}style="display:none;"{{/step2current}}>
+                    {{! Server-side template selection based on step2_template }}
+                    {{#step2_template}}
+                        {{#is_hosted}}
+                            {{> mod_videolesson/setup_wizard_step2_hosted}}
+                        {{/is_hosted}}
+                        {{#is_self}}
+                            {{> mod_videolesson/setup_wizard_step2_self}}
+                        {{/is_self}}
+                        {{#is_external}}
+                            {{> mod_videolesson/setup_wizard_step2_external}}
+                        {{/is_external}}
+                    {{/step2_template}}
+                </div>
+                <div class="step-content" id="step-3-content" {{^step3current}}style="display:none;"{{/step3current}}>
+                    {{> mod_videolesson/setup_wizard_step3}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.videolesson-setup-wizard .setup-progress {
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 20px;
+}}
+
+.videolesson-setup-wizard .step-indicator {
+    text-align: center;
+    padding: 15px;
+    position: relative;
+}
+
+.videolesson-setup-wizard .step-indicator.current .step-number {
+    background-color: #0f6cbf;
+    color: white;
+    border: 2px solid #0f6cbf;
+}
+
+.videolesson-setup-wizard .step-indicator.completed .step-number {
+    background-color: #28a745;
+    color: white;
+    border: 2px solid #28a745;
+}
+
+.videolesson-setup-wizard .step-number {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-weight: bold;
+    font-size: 20px;
+    border: 2px solid #e0e0e0;
+}
+
+.videolesson-setup-wizard .step-label {
+    font-weight: 500;
+    color: #333;
+}
+
+.videolesson-setup-wizard .step-arrow {
+    padding: 0;
+    color: #666;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+@media (max-width: 768px) {
+    .videolesson-setup-wizard .step-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+}
+
+.videolesson-setup-wizard .step-content {
+    min-height: 400px;
+}
+
+.videolesson-setup-wizard .setup-actions {
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+}
+</style>

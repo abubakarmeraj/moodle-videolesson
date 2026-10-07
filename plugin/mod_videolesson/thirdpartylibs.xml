@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<libraries>
+  <library>
+    <location>resources/plyr</location>
+    <name>Plyr</name>
+    <description>Accessible HTML5 media player (JS and CSS). Bundled files: plyr.min.js, plyr.polyfilled.min.js, plyr.css, plyr.min.css (minified stylesheet), and custom.css (plugin-specific overrides).</description>
+    <version>3.7.8</version>
+    <license>MIT</license>
+    <repository>https://github.com/sampotts/plyr</repository>
+    <copyrights>
+      <copyright>Sam Potts and Plyr contributors</copyright>
+    </copyrights>
+    <customised/>
+  </library>
+  <library>
+    <location>resources/hls.min.js</location>
+    <name>hls.js</name>
+    <description>JavaScript library that plays HLS (HTTP Live Streaming) in browsers using Media Source Extensions.</description>
+    <version>1.6.2</version>
+    <license>Apache</license>
+    <licenseversion>2.0</licenseversion>
+    <repository>https://github.com/video-dev/hls.js</repository>
+    <copyrights>
+      <copyright>video-dev and hls.js contributors</copyright>
+    </copyrights>
+  </library>
+</libraries>

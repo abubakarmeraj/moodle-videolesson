@@ -1,0 +1,133 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_videolesson/setup_wizard_step2_self
+
+    Setup wizard step 2: self-hosted AWS configuration.
+}}
+
+<div class="setup-step-2-self mt-4">
+    <h4>{{#str}}setup:step2:self:heading, mod_videolesson{{/str}}</h4>
+    <p class="text-muted mb-4">{{#str}}setup:step2:self:description, mod_videolesson{{/str}}</p>
+
+    {{#step2complete}}
+    <div class="alert alert-success mb-3">
+        <i class="fa fa-check-circle"></i> {{#str}}setup:step2:complete, mod_videolesson{{/str}}
+    </div>
+    {{/step2complete}}
+
+    <!-- AWS Settings Form -->
+    <div class="card border-primary">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0"><i class="fa fa-server"></i> {{#str}}setup:step2:selfmanaged:title, mod_videolesson{{/str}}</h5>
+        </div>
+        <div class="card-body">
+            <form id="aws-settings-form" method="post" action="{{wwwroot}}/mod/videolesson/index.php" class="mt-3">
+                <input type="hidden" name="sesskey" value="{{sesskey}}">
+                <input type="hidden" name="action" value="validate_aws_and_complete_step2">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="aws-api-key">{{#str}}settings:aws:key, mod_videolesson{{/str}}</label>
+                            <input type="text" class="form-control" id="aws-api-key" name="api_key" value="{{awssettings.api_key}}" placeholder="{{#str}}settings:aws:key, mod_videolesson{{/str}}">
+                            <small class="form-text text-muted">{{#str}}settings:aws:key_help, mod_videolesson{{/str}}</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="aws-api-secret">{{#str}}settings:aws:secret, mod_videolesson{{/str}}</label>
+                            <input type="password" class="form-control" id="aws-api-secret" name="api_secret" value="{{awssettings.api_secret}}" placeholder="{{#str}}settings:aws:secret, mod_videolesson{{/str}}">
+                            <small class="form-text text-muted">{{#str}}settings:aws:secret_help, mod_videolesson{{/str}}</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="aws-s3-input-bucket">{{#str}}settings:aws:input_bucket, mod_videolesson{{/str}}</label>
+                            <input type="text" class="form-control" id="aws-s3-input-bucket" name="s3_input_bucket" value="{{awssettings.s3_input_bucket}}" placeholder="{{#str}}settings:aws:input_bucket, mod_videolesson{{/str}}">
+                            <small class="form-text text-muted">{{#str}}settings:aws:input_bucket_help, mod_videolesson{{/str}}</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="aws-s3-output-bucket">{{#str}}settings:aws:output_bucket, mod_videolesson{{/str}}</label>
+                            <input type="text" class="form-control" id="aws-s3-output-bucket" name="s3_output_bucket" value="{{awssettings.s3_output_bucket}}" placeholder="{{#str}}settings:aws:output_bucket, mod_videolesson{{/str}}">
+                            <small class="form-text text-muted">{{#str}}settings:aws:output_bucket_help, mod_videolesson{{/str}}</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="aws-api-region">{{#str}}settings:aws:region, mod_videolesson{{/str}}</label>
+                            <select class="form-control" id="aws-api-region" name="api_region">
+                                {{#regionoptions}}
+                                <option value="{{key}}" {{#selected}}selected="selected"{{/selected}}>{{value}}</option>
+                                {{/regionoptions}}
+                            </select>
+                            <small class="form-text text-muted">{{#str}}settings:aws:region_help, mod_videolesson{{/str}}</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="aws-dynamodb-table">{{#str}}settings:aws:dynamodb_table_name, mod_videolesson{{/str}}</label>
+                            <input type="text" class="form-control" id="aws-dynamodb-table" name="dynamodb_table_name" value="{{awssettings.dynamodb_table_name}}" placeholder="videolesson-transcoding-status">
+                            <small class="form-text text-muted">{{#str}}settings:aws:dynamodb_table_name_help, mod_videolesson{{/str}}</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="aws-sns-topic-arn">{{#str}}settings:aws:sns_topic_arn, mod_videolesson{{/str}}</label>
+                            <input type="text" class="form-control" id="aws-sns-topic-arn" name="sns_topic_arn" value="{{awssettings.sns_topic_arn}}" placeholder="{{#str}}settings:aws:sns_topic_arn, mod_videolesson{{/str}}">
+                            <small class="form-text text-muted">{{#str}}settings:aws:sns_topic_arn_desc, mod_videolesson{{/str}}</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="aws-cloudfront-domain">{{#str}}settings:aws:cloudfrontdomain, mod_videolesson{{/str}}</label>
+                            <input type="url" class="form-control" id="aws-cloudfront-domain" name="cloudfrontdomain" value="{{awssettings.cloudfrontdomain}}" placeholder="{{#str}}settings:aws:cloudfrontdomain, mod_videolesson{{/str}}">
+                            <small class="form-text text-muted">{{#str}}settings:aws:cloudfrontdomain_help, mod_videolesson{{/str}}</small>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <form method="post" action="{{wwwroot}}/mod/videolesson/index.php" id="step2-self-back-form" style="display: inline;">
+        <input type="hidden" name="sesskey" value="{{sesskey}}">
+        <input type="hidden" name="action" value="go_back_step1">
+    </form>
+    <div class="setup-actions mt-4">
+        <button type="submit" form="step2-self-back-form" class="btn btn-secondary">
+            {{#str}}setup:previous, mod_videolesson{{/str}}
+        </button>
+        <button type="submit" form="aws-settings-form" class="btn btn-primary" id="step2-validate-btn">
+            <i class="fa fa-check-circle"></i> {{#str}}setup:step2:self:validate, mod_videolesson{{/str}}
+        </button>
+    </div>
+</div>

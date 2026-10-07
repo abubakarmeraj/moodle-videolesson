@@ -1,0 +1,74 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_videolesson/folder_tree_item
+
+    Recursive folder tree item template.
+}}
+
+<div class="videolesson-folder-item {{#selected}}selected{{/selected}}"
+     data-folder-id="{{id}}"
+     data-folder-depth="{{depth}}"
+     data-droppable="true"
+     data-expandable="{{#has_children}}true{{/has_children}}{{^has_children}}false{{/has_children}}">
+    <div class="folder-content">
+        {{#has_children}}
+        <button type="button" class="folder-toggle" aria-expanded="false">
+            <i class="icon fa fa-chevron-right fa-fw" aria-hidden="true"></i>
+        </button>
+        {{/has_children}}
+        {{^has_children}}
+        <span class="folder-spacer"></span>
+        {{/has_children}}
+
+        <span class="folder-icon">
+            <i class="icon fa fa-folder fa-fw" aria-hidden="true"></i>
+        </span>
+        <span class="folder-name" title="{{name}}">{{name}}</span>
+        <span class="folder-count">
+            {{#video_count}}
+                <span class="video-count-number">{{video_count}}</span>
+                <i class="icon fa fa-video fa-fw" aria-hidden="true" title="{{#str}}folder:video_count, mod_videolesson, {{video_count}}{{/str}}"></i>
+            {{/video_count}}
+        </span>
+
+        {{#can_manage}}
+        <div class="folder-actions">
+            <button type="button" class="btn btn-sm btn-link videolesson-rename-folder" data-folder-id="{{id}}" title="{{#str}}folder:edit, mod_videolesson{{/str}}">
+                <i class="icon fa fa-edit fa-fw" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="btn btn-sm btn-link videolesson-delete-folder" data-folder-id="{{id}}" title="{{#str}}folder:delete, mod_videolesson{{/str}}">
+                <i class="icon fa fa-trash fa-fw" aria-hidden="true"></i>
+            </button>
+            {{#can_create_subfolder}}
+            <button type="button" class="btn btn-sm btn-link videolesson-create-subfolder" data-parent-id="{{id}}" title="{{#str}}folder:create, mod_videolesson{{/str}}">
+                <i class="icon fa fa-folder-plus fa-fw" aria-hidden="true"></i>
+            </button>
+            {{/can_create_subfolder}}
+        </div>
+        {{/can_manage}}
+    </div>
+
+    {{#has_children}}
+    <div class="folder-children">
+        {{#children}}
+            {{> mod_videolesson/folder_tree_item }}
+        {{/children}}
+    </div>
+    {{/has_children}}
+</div>
+

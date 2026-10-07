@@ -1,0 +1,116 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_videolesson/setup_wizard_step2_hosted
+
+    Setup wizard step 2: BitKea hosted service configuration.
+}}
+
+<div class="setup-step-2-hosted mt-4">
+    <div class="text-center mb-4">
+        <h4>{{#str}}setup:step2:hosted:selection:title, mod_videolesson{{/str}}</h4>
+        {{^is_activated}}
+        <p class="text-muted mb-4">{{#str}}setup:step2:hosted:selection:message, mod_videolesson{{/str}}</p>
+        {{/is_activated}}
+    </div>
+
+    <div class="card border-success mb-4">
+        <div class="card-header bg-success text-white">
+            <h5 class="mb-0"><i class="fa fa-info-circle"></i> {{#str}}setup:step2:hosted:details:title, mod_videolesson{{/str}}</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <strong>{{#str}}setup:step2:hosted:details:type, mod_videolesson{{/str}}:</strong>
+                    <p class="mb-0">{{#str}}setup:step2:hosted:details:type:value, mod_videolesson{{/str}}</p>
+
+                    <strong>{{#str}}setup:step2:hosted:details:storage, mod_videolesson{{/str}}:</strong>
+                    <p class="mb-0">{{#str}}setup:step2:hosted:details:storage:value, mod_videolesson{{/str}}</p>
+
+                    <strong>{{#str}}setup:step2:hosted:details:upload, mod_videolesson{{/str}}:</strong>
+                    <p class="mb-0">{{#str}}setup:step2:hosted:details:upload:value, mod_videolesson{{/str}}</p>
+                </div>
+
+                <div class="col-md-6">
+                    <h6 class="mb-3">{{#str}}setup:step2:hosted:features:title, mod_videolesson{{/str}}</h6>
+                    <div class="row">
+                        <ul class="list-unstyled small text-muted mb-2">
+                            <li><i class="fa fa-check text-success"></i> {{#str}}setup:step2:hosted:feature1, mod_videolesson{{/str}}</li>
+                            <li><i class="fa fa-check text-success"></i> {{#str}}setup:step2:hosted:feature2, mod_videolesson{{/str}}</li>
+                            <li><i class="fa fa-check text-success"></i> {{#str}}setup:step2:hosted:feature3, mod_videolesson{{/str}}</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    {{#is_activated}}
+    <div class="alert alert-success mb-4">
+        <i class="fa fa-check-circle"></i> {{#str}}setup:step2:hosted:activation:success, mod_videolesson{{/str}}
+        {{#hostinglicensekey}}
+        <div class="mt-3">
+            <strong>{{#str}}setup:step2:hosted:license:key:label, mod_videolesson{{/str}}:</strong>
+            <div class="mt-2">
+                <code class="d-block p-2 bg-light border rounded">{{hostinglicensekey}}</code>
+            </div>
+            <small class="form-text text-muted">{{#str}}setup:step2:hosted:license:key:help, mod_videolesson{{/str}}</small>
+        </div>
+        {{/hostinglicensekey}}
+    </div>
+    {{/is_activated}}
+
+    <form method="post" action="{{wwwroot}}/mod/videolesson/index.php" id="step2-hosted-form">
+        <input type="hidden" name="sesskey" value="{{sesskey}}">
+
+        {{^is_activated}}
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="has-existing-license" name="has_existing_license" value="1">
+                    <label class="form-check-label" for="has-existing-license">
+                        {{#str}}setup:step2:hosted:has:existing:license, mod_videolesson{{/str}}
+                    </label>
+                </div>
+                <div id="existing-license-field" class="form-group mb-0 mt-2" style="display: none;">
+                    <label for="existing-license-key">{{#str}}setup:step2:hosted:existing:license:key:label, mod_videolesson{{/str}}</label>
+                    <input type="text" class="form-control" id="existing-license-key" name="existing_license_key" placeholder="{{#str}}setup:step2:hosted:existing:license:key:placeholder, mod_videolesson{{/str}}">
+                    <small class="form-text text-muted">{{#str}}setup:step2:hosted:existing:license:key:help, mod_videolesson{{/str}}</small>
+                </div>
+            </div>
+        </div>
+        {{/is_activated}}
+
+        <div class="setup-actions mt-4">
+            <button type="submit" name="action" value="go_back_step1" class="btn btn-secondary" formnovalidate>
+                {{#str}}setup:previous, mod_videolesson{{/str}}
+            </button>
+            {{^is_activated}}
+            <button type="submit" name="action" value="activate_free_hosting" class="btn btn-primary btn-lg" id="activate-btn">
+                <i class="fa fa-rocket"></i> {{#str}}setup:step2:hosted:activate, mod_videolesson{{/str}}
+            </button>
+            {{/is_activated}}
+            {{#is_activated}}
+            <button type="submit" name="action" value="complete_step2" class="btn btn-primary btn-lg">
+                {{#str}}setup:next, mod_videolesson{{/str}}
+            </button>
+            {{/is_activated}}
+        </div>
+    </form>
+</div>

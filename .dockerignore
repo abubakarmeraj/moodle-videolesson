@@ -1,0 +1,12 @@
+.git
+.lab
+**/__pycache__
+**/.venv
+**/.env
+**/.env.*
+**/*.key
+**/*.pem
+**/*.p12
+docs
+tests
+plugin

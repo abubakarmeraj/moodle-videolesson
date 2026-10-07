@@ -1,0 +1,34 @@
+/* CodeFortex player containment. No global theme overrides. GPL v3 or later. */
+.cf-video-region { width: 100%; max-width: 960px; min-width: 0; margin-inline: auto; }
+.cf-video-region video { display: block; width: 100%; aspect-ratio: auto var(--cf-video-aspect, 16 / 9); max-height: 65vh; object-fit: contain; background: #000; }
+.cf-video-region .plyr { isolation: isolate; }
+#cf-upload-progress { display: block; width: 100%; height: 1.25rem; margin-block: 1rem; accent-color: #198754; }
+#cf-upload-progress::-webkit-progress-bar { background: #e9ecef; border-radius: .25rem; }
+#cf-upload-progress::-webkit-progress-value { background: #198754; transition: width .3s ease; border-radius: .25rem; }
+#cf-upload-progress::-moz-progress-bar { background: #198754; }
+@media (prefers-reduced-motion: reduce) {
+    #cf-upload-progress::-webkit-progress-value { transition: none; }
+}
+/* Native and Plyr fallback fullscreen must not inherit inline viewport containment. */
+.cf-video-region .plyr:fullscreen video,
+.cf-video-region .plyr.plyr--fullscreen-fallback video,
+.cf-video-region video:fullscreen {
+    height: 100%; max-height: none; object-fit: contain; object-position: center;
+}
+/* Keep the vendor selector separate: an unsupported pseudo-class invalidates an entire selector list. */
+.cf-video-region .plyr:-webkit-full-screen video {
+    height: 100%; max-height: none; object-fit: contain; object-position: center;
+}
+@media (max-width: 600px) {
+    .cf-video-region { padding-block-end: 18rem; }
+    .cf-video-region .plyr__menu__container { max-height: 40vh; overflow-y: auto; }
+    /* A small inline player has insufficient space above its controls for six speed choices.
+       Open below, inside the reserved scrollable region, rather than underneath a fixed header. */
+    .cf-video-region .plyr:not(:fullscreen):not(.plyr--fullscreen-fallback) { overflow: visible; }
+    .cf-video-region .plyr:not(:fullscreen):not(.plyr--fullscreen-fallback) .plyr__menu__container {
+        top: 100%; bottom: auto; margin-top: .5rem; margin-bottom: 0;
+    }
+    .cf-video-region .plyr:not(:fullscreen):not(.plyr--fullscreen-fallback) .plyr__menu__container::after {
+        top: auto; bottom: 100%; border-top: 0; border-bottom: 4px solid #fff;
+    }
+}

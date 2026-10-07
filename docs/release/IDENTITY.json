@@ -1,0 +1,20 @@
+{
+  "plugin_component": "mod_videolesson",
+  "plugin_version": 2026100701,
+  "plugin_release": "CodeFortex 3.1.0-rc1",
+  "service_version": "0.5.0-rc1",
+  "service_package_version": "0.5.0rc1",
+  "protocol": 1,
+  "schema_migrations": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005"
+  ],
+  "moodle_line": "5.2",
+  "license": "GPL-3.0-or-later",
+  "product_manifest_sha256": "f3e4b08bb608d8a072fc48e4287f407c0249e962f179f0a2678e377c94eae466",
+  "service_manifest_sha256": "b6e165af653e3855facd20399d025c199d17c218308ba373482a3b50473f6ad9",
+  "status": "prepared RC1; not published; final artifact smoke pending"
+}

@@ -1,0 +1,50 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_videolesson/report_plays
+
+    Report tab listing individual play events.
+}}
+
+<h5>
+    {{#str}} report:plays:header, mod_videolesson{{/str}} ({{{total}}}) {{#user}} - {{user.fullname}} {{/user}}
+</h5>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">{{#str}} report:plays:col:user, mod_videolesson{{/str}}</th>
+      <th scope="col">{{#str}} report:plays:col:time, mod_videolesson{{/str}}</th>
+      <th scope="col">{{#str}} report:plays:col:duration, mod_videolesson{{/str}}</th>
+      <th scope="col">{{#str}} report:plays:col:data, mod_videolesson{{/str}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#data}}
+      <tr>
+        <td>{{{userid}}}</td>
+        <td><a href="{{{url}}}">{{{userdate}}}</a></td>
+        <td>{{{watchduration}}}  ({{#str}} report:plays:progress, mod_videolesson, {{{progress}}}{{/str}})</td>
+        <td>
+            <div id="mod-videolesson-chart-container">
+                <div data-ranges="{{{ranges}}}" data-vduration="{{{duration}}}" class="mod-videolesson-chart m-auto" style="max-width: 900px;"></div>
+            </div>
+        </td>
+      </tr>
+    {{/data}}
+  </tbody>
+</table>

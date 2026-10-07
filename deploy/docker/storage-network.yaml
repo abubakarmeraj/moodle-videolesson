@@ -1,0 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Enable operator-owned HTTPS storage egress; do not publish database/Redis ports.
+networks:
+  private:
+    internal: false

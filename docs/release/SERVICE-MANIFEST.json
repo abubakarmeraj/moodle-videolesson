@@ -1,0 +1,167 @@
+[
+  {
+    "path": "service/video-service/Dockerfile",
+    "sha256": "0cecedc956fc049dcc028320603ef510e15384b7988321baa86aaccba916fb76",
+    "bytes": 818
+  },
+  {
+    "path": "service/video-service/LICENSE",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "bytes": 35149
+  },
+  {
+    "path": "service/video-service/README.md",
+    "sha256": "787fb621706d7ae7de35c257bf6eb9967f5ba1c7a8e5dc6c7f333b554cf03cee",
+    "bytes": 1028
+  },
+  {
+    "path": "service/video-service/VERSION",
+    "sha256": "034dc85925aa66e33eb527d602980dbc06406a8a4198c380c567573a19f1e952",
+    "bytes": 10
+  },
+  {
+    "path": "service/video-service/deployment/OPERATIONS.md",
+    "sha256": "4cca92955059dce3aa872fbea25a1feadc2e32a3ce32486f410e8b19593c4024",
+    "bytes": 2032
+  },
+  {
+    "path": "service/video-service/deployment/environment.example",
+    "sha256": "48129a1e14b13f4f9c963d5e7cb5ae152f5895a38f0ecd4ed5c4d55ae40ea881",
+    "bytes": 1829
+  },
+  {
+    "path": "service/video-service/migrations/001.sql",
+    "sha256": "481ef87be727907fb233052166a743f273fec35c0216465808d1972dcb6e5d2a",
+    "bytes": 2788
+  },
+  {
+    "path": "service/video-service/migrations/002.sql",
+    "sha256": "1dc364ec5bc008003fd3cfb8268b5efce1bb293c95499e9798854cc0cc0baad4",
+    "bytes": 327
+  },
+  {
+    "path": "service/video-service/migrations/003.sql",
+    "sha256": "a225d495baf57a4043926aab897cda2c71e641350563c17da03759b0d99e5ff0",
+    "bytes": 389
+  },
+  {
+    "path": "service/video-service/migrations/004.sql",
+    "sha256": "3577fdd28f653ceb1b09b2ecdf1ad94bf7e908686e44f0d0c639946ff99cd6bc",
+    "bytes": 456
+  },
+  {
+    "path": "service/video-service/migrations/005.sql",
+    "sha256": "89832e0726e1aa99db3a7af23fe94e068433622fd15896ff9fc6e66944212a42",
+    "bytes": 2010
+  },
+  {
+    "path": "service/video-service/pyproject.toml",
+    "sha256": "16b5cc5f0aeda31f81a48bb3821ac0d7c02c8c1f003a592f7f0ed533da8677fa",
+    "bytes": 386
+  },
+  {
+    "path": "service/video-service/release/python-sbom.json",
+    "sha256": "a4844eae0844623f0bdd0546b52cd977b4c0ebdbb6584b787b36c0edaefe41d2",
+    "bytes": 34972
+  },
+  {
+    "path": "service/video-service/requirements.lock",
+    "sha256": "d577501bedc1a8cad316c5049f912561b8d8994adba3ec3780c6f1d9b4d4502f",
+    "bytes": 14226
+  },
+  {
+    "path": "service/video-service/requirements.txt",
+    "sha256": "4f9a1ea6da8c1654c41cabbaae8f20c9ae0c0e63b31c622a669f739e9626fc2f",
+    "bytes": 38
+  },
+  {
+    "path": "service/video-service/service/__init__.py",
+    "sha256": "0a4d5448370821041e814f0d85fd09ccda28696a28584831cafd880fe015cf9a",
+    "bytes": 157
+  },
+  {
+    "path": "service/video-service/service/accounting.py",
+    "sha256": "d432ae5c9cfe43f78b59987cc7a202a2c68b5173cb479789ce11f3559daec2a6",
+    "bytes": 4970
+  },
+  {
+    "path": "service/video-service/service/api.py",
+    "sha256": "6f1fb458974ce1b26f08c4366c3f19fa7723c5cf546c6f9aed0a8caddecb23fb",
+    "bytes": 22932
+  },
+  {
+    "path": "service/video-service/service/capabilities.py",
+    "sha256": "c984a3a35dd57c8d1a204c54409a80c2acea328f25598063bdb891b931ba87c0",
+    "bytes": 1599
+  },
+  {
+    "path": "service/video-service/service/capacity.py",
+    "sha256": "04d22fd3e0cd23243edccdea27f5b0fbf3ace8d97d2d4bbb71addbe2bb91d964",
+    "bytes": 1802
+  },
+  {
+    "path": "service/video-service/service/config.py",
+    "sha256": "c53cc82b29f24b485a92399f6271b8d4c58832c6eb0dbe712802f490938fecd6",
+    "bytes": 6998
+  },
+  {
+    "path": "service/video-service/service/db.py",
+    "sha256": "9553ce19fffec9691b8f37ff8ea72273f79922df997b93374bc499111bec087f",
+    "bytes": 953
+  },
+  {
+    "path": "service/video-service/service/diagnostics.py",
+    "sha256": "4a1d0d20dbc8f383be5be3a69522236a3b341ab81452b876c91427dfe5a0d5c5",
+    "bytes": 1057
+  },
+  {
+    "path": "service/video-service/service/dispatcher.py",
+    "sha256": "644be713803ca8f1059fb5f63789eed9685de31720801f1d2010eb15f7d003a3",
+    "bytes": 2134
+  },
+  {
+    "path": "service/video-service/service/gateway.py",
+    "sha256": "4791d39f89e2fb08d37597adabc6988423c61fbfc3f1df228c5cdb97270c030a",
+    "bytes": 4870
+  },
+  {
+    "path": "service/video-service/service/hardening.py",
+    "sha256": "de41b4f13e42b2878d79c259be5000bea757161e9e312c22001e8a6a59455491",
+    "bytes": 4416
+  },
+  {
+    "path": "service/video-service/service/janitor.py",
+    "sha256": "9a6d4dcbd55900eb080c4b05a653ba40de4202f1ecd6db50fb5058e4ed395e98",
+    "bytes": 3663
+  },
+  {
+    "path": "service/video-service/service/migrate.py",
+    "sha256": "bc3cfc57d18fe33eb713794b7a572e0dddc5ed74731c87db2b50c3a4a88a56b9",
+    "bytes": 511
+  },
+  {
+    "path": "service/video-service/service/recycle.py",
+    "sha256": "991322a46774f903052320fae5d28ada659961993a1023c708ad607796ddb4a8",
+    "bytes": 2632
+  },
+  {
+    "path": "service/video-service/service/security.py",
+    "sha256": "5bce9fb135de989be4bf5c8110e0b2a2f56d303a40ecb50bd151721fd13967f4",
+    "bytes": 3170
+  },
+  {
+    "path": "service/video-service/service/storage.py",
+    "sha256": "845f7755ee68a2b85147efa1097b81d825eb876c968784f5438a7fa1e1d3e16e",
+    "bytes": 2323
+  },
+  {
+    "path": "service/video-service/service/storage_admin.py",
+    "sha256": "374070690220208a2dd831d149f72df1e57ea1dbf17d8732274d9710760601e1",
+    "bytes": 6823
+  },
+  {
+    "path": "service/video-service/service/worker.py",
+    "sha256": "ec3353fb77f382631d8eee84cb22c4e1dbb924a206902ce783d20588066d3582",
+    "bytes": 17665
+  }
+]

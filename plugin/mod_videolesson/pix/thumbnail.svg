@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2026 CodeFortex. SPDX-License-Identifier: GPL-3.0-or-later -->
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <title>CodeFortex Video Lesson</title>
+  <rect x="0" y="0" width="120" height="120" rx="20" fill="#142c51"/>
+  <rect x="16" y="20" width="88" height="64" rx="10" fill="#4d8ef7"/>
+  <polygon points="50,34 50,70 78,52" fill="#ffffff"/>
+  <polygon points="28,91 52,91 60,96 68,91 92,91 92,101 68,101 60,106 52,101 28,101" fill="#8ee8d1"/>
+</svg>

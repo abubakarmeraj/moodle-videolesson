@@ -1,0 +1,133 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_videolesson/setup_wizard_step1
+
+    Setup wizard step 1: hosting option selection.
+}}
+
+<div class="setup-step-1 mt-4">
+    <h4>{{#str}}setup:step1:heading, mod_videolesson{{/str}}</h4>
+    <p class="text-muted">
+        {{#str}}setup:step1:description, mod_videolesson{{/str}}
+    </p>
+
+    {{#step1complete}}
+    <div class="alert alert-success mb-3">
+        <i class="fa fa-check-circle"></i> {{#str}}setup:step1:complete, mod_videolesson{{/str}}
+    </div>
+    {{/step1complete}}
+
+    <!-- Hosting Selection Form -->
+    <form method="post" action="{{wwwroot}}/mod/videolesson/index.php" id="step1-form">
+        <input type="hidden" name="action" value="save_step1">
+        <input type="hidden" name="sesskey" value="{{sesskey}}">
+
+        <div class="hosting-selection">
+            <div class="row">
+                <!-- Option 1: Free Hosted (Recommended) -->
+                <div class="col-md-4 mb-3">
+                    <div class="hosting-option-card" data-option="free">
+                        <div class="card h-100 hosting-card {{#selected_option}}{{#is_free}}selected{{/is_free}}{{/selected_option}} {{^selected_option.value}}selected{{/selected_option.value}}">
+                            <div class="card-body text-center p-4">
+                                <div class="hosting-icon mb-3">
+                                    <i class="fa fa-gift fa-3x text-success"></i>
+                                </div>
+                                <div class="badge badge-success mb-2">{{#str}}setup:step1:option1:recommended, mod_videolesson{{/str}}</div>
+                                <h5 class="card-title">{{#str}}setup:step1:option1:title, mod_videolesson{{/str}}</h5>
+                                <p class="card-text text-muted small">{{#str}}setup:step1:option1:description, mod_videolesson{{/str}}</p>
+                                <p class="small text-muted mb-2">{{#str}}setup:step1:option1:upgrade_note, mod_videolesson{{/str}}</p>
+                                <a href="https://www.mooplugins.com/moodle-video-lesson-activity-plugin/#hosting-plans" target="_blank" class="small">
+                                    {{#str}}setup:step1:option1:link, mod_videolesson{{/str}}
+                                </a>
+                                <div class="form-check text-center">
+                                    <input class="form-check-input" type="radio" name="hosting-type" id="hosting-free" value="free" {{#selected_option}}{{#is_free}}checked{{/is_free}}{{/selected_option}} {{^selected_option.value}}checked{{/selected_option.value}}>
+                                    <label class="form-check-label" for="hosting-free">
+                                        <strong>{{#str}}setup:step1:option1:select, mod_videolesson{{/str}}</strong>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Option 2: Self-Managed -->
+                <div class="col-md-4 mb-3">
+                    <div class="hosting-option-card" data-option="self">
+                        <div class="card h-100 hosting-card {{#selected_option}}{{#is_self}}selected{{/is_self}}{{/selected_option}}">
+                            <div class="card-body text-center p-4">
+                                <div class="hosting-icon mb-3">
+                                    <i class="fa fa-server fa-3x text-primary"></i>
+                                </div>
+                                <h5 class="card-title">{{#str}}setup:step1:option2:title, mod_videolesson{{/str}}</h5>
+                                <p class="card-text text-muted small">{{#str}}setup:step1:option2:description, mod_videolesson{{/str}}</p>
+                                <p class="text-muted small mb-3">
+                                    {{#str}}setup:step1:option2:note, mod_videolesson{{/str}}
+                                </p>
+                                <div class="form-check text-center" style="margin-bottom: 0;">
+                                    <input class="form-check-input" type="radio" name="hosting-type" id="hosting-self" value="self" {{#selected_option}}{{#is_self}}checked{{/is_self}}{{/selected_option}}>
+                                    <label class="form-check-label" for="hosting-self">
+                                        <strong>{{#str}}setup:step1:option2:select, mod_videolesson{{/str}}</strong>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Option 3: External Links Only -->
+                <div class="col-md-4 mb-3">
+                    <div class="hosting-option-card" data-option="none">
+                        <div class="card h-100 hosting-card {{#selected_option}}{{#is_none}}selected{{/is_none}}{{/selected_option}}">
+                            <div class="card-body text-center p-4">
+                                <div class="hosting-icon mb-3">
+                                    <i class="fa fa-link fa-3x text-info"></i>
+                                </div>
+                                <h5 class="card-title">{{#str}}setup:step1:option3:title, mod_videolesson{{/str}}</h5>
+                                <p class="card-text text-muted small">{{#str}}setup:step1:option3:description, mod_videolesson{{/str}}</p>
+                                <div class="alert alert-warning small mb-3">
+                                    <strong>{{#str}}setup:step1:option3:limitations:title, mod_videolesson{{/str}}</strong>
+                                    <ul class="list-unstyled mb-0 mt-2 text-left">
+                                        <li><i class="fa fa-times text-danger"></i> {{#str}}setup:step1:option3:limitation1, mod_videolesson{{/str}}</li>
+                                        <li><i class="fa fa-times text-danger"></i> {{#str}}setup:step1:option3:limitation2, mod_videolesson{{/str}}</li>
+                                        <li><i class="fa fa-times text-danger"></i> {{#str}}setup:step1:option3:limitation3, mod_videolesson{{/str}}</li>
+                                    </ul>
+                                </div>
+                                <a href="https://www.mooplugins.com/docs/using-the-external-link-as-video-source/" target="_blank" class="small mb-3">
+                                    {{#str}}setup:step1:option3:link, mod_videolesson{{/str}}
+                                </a>
+                                <div class="form-check text-center" style="margin-bottom: 0;">
+                                    <input class="form-check-input" type="radio" name="hosting-type" id="hosting-external" value="none" {{#selected_option}}{{#is_none}}checked{{/is_none}}{{/selected_option}}>
+                                    <label class="form-check-label" for="hosting-external">
+                                        <strong>{{#str}}setup:step1:option3:select, mod_videolesson{{/str}}</strong>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="setup-actions">
+            <div></div>
+            <button type="submit" class="btn btn-primary" id="step1-next-btn">
+                {{#str}}setup:next, mod_videolesson{{/str}}
+            </button>
+        </div>
+    </form>
+</div>

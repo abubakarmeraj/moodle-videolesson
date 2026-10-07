@@ -1,0 +1,1767 @@
+[
+  {
+    "path": ".dockerignore",
+    "sha256": "a0492c418c19ac3a8b7c2941bca1367ffefb8acb0366e71c6d27f93b4db65e24",
+    "bytes": 97
+  },
+  {
+    "path": ".gitattributes",
+    "sha256": "c6edf68f3ce0d42e6b6f71da6ab7575ea4afd22c7f9946a056a7e4288015f8f4",
+    "bytes": 57
+  },
+  {
+    "path": ".github/README.md",
+    "sha256": "ba863200f03f2bbbe3b6e32239c7b5e5836c906336976c237dd7d377783ace19",
+    "bytes": 252
+  },
+  {
+    "path": ".gitignore",
+    "sha256": "4aabe40a5464f5ae4692cf779ac152c1e3687fbf0bb710f62b54006380277aaf",
+    "bytes": 1268
+  },
+  {
+    "path": "CHANGELOG.md",
+    "sha256": "8f680dcfa009a1943a3f46bc9a90590c28717981bf1248a6bd8cd67d5107171c",
+    "bytes": 947
+  },
+  {
+    "path": "CONTRIBUTING.md",
+    "sha256": "74a2433bb2fac3532d3ee394988cdf6c8970a2e65e5be80f47efad4bc8bfb747",
+    "bytes": 1867
+  },
+  {
+    "path": "LICENSE",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "bytes": 35149
+  },
+  {
+    "path": "README.md",
+    "sha256": "660f84bf3f3882b60093be07c63cb45807aa42f397946cfaa623f5355984cbf4",
+    "bytes": 3025
+  },
+  {
+    "path": "SECURITY.md",
+    "sha256": "45d53db44438b447464a4f27380e426431c7b9bc66d8adcd52a209fbc6eec239",
+    "bytes": 1272
+  },
+  {
+    "path": "THIRD_PARTY_NOTICES.md",
+    "sha256": "19abe2693204c521ff90bf4c29b6929bb903adcc528cac94763f2c44ef660525",
+    "bytes": 4498
+  },
+  {
+    "path": "deploy/CONFIGURATION.md",
+    "sha256": "98bf956b22b372647c745c42e4c77a5a26b88e38c5d365f263b9ae40de7ce8a0",
+    "bytes": 586
+  },
+  {
+    "path": "deploy/docker/.env.example",
+    "sha256": "09513448061d0df62cbb5cc294b907d6d0a4577325febf93e7c41c5859591a6b",
+    "bytes": 190
+  },
+  {
+    "path": "deploy/docker/Dockerfile",
+    "sha256": "3b7bf66cbc12a8b4c70b75505513ded3c94a3902a431b0421d5581f959b24bb3",
+    "bytes": 720
+  },
+  {
+    "path": "deploy/docker/README.md",
+    "sha256": "561a13b44cde2a83e4b45c48a46b5ce2fd3a9c0b1d529b3e489bf7dd6f58617d",
+    "bytes": 535
+  },
+  {
+    "path": "deploy/docker/compose.yaml",
+    "sha256": "8bc7ff3dd378eb7415196c4ed49511676f87c5d322eefbbb843028f32188d605",
+    "bytes": 3114
+  },
+  {
+    "path": "deploy/docker/nginx.conf",
+    "sha256": "48ed9182d7a412483ca133235f0082c9c9cb1ffe9b69500bbbd44b6a0c907439",
+    "bytes": 768
+  },
+  {
+    "path": "deploy/docker/prepare.py",
+    "sha256": "8ed720f91d87917c620f4662fcb4fcc6ce0a8f3f1d8320eb55e02fd3c14d1e97",
+    "bytes": 4051
+  },
+  {
+    "path": "deploy/docker/storage-network.yaml",
+    "sha256": "0435bae5f1cc20176e024708d56a36b20ffae1e800accee2ed2cbb530d2a2461",
+    "bytes": 168
+  },
+  {
+    "path": "deploy/docs/SINGLE-SERVER-ARCHITECTURE.md",
+    "sha256": "0467630898053e746b95d8fecfdfec9c3ba2b35c74f2ab403a84ef415a7aeaf6",
+    "bytes": 990
+  },
+  {
+    "path": "deploy/installer/README.md",
+    "sha256": "ee46bffdad80de7e7c3ba04b2129bc7da46a8e74184226e622a8e87c8f153f37",
+    "bytes": 568
+  },
+  {
+    "path": "deploy/installer/check.py",
+    "sha256": "aeadeea3487a57e38aa1a38e0c39e31ecdea4c4ca96eec19d8301edc60308b3c",
+    "bytes": 2921
+  },
+  {
+    "path": "deploy/installer/install.py",
+    "sha256": "9fe63622ca071793223ecaf76a2a0e35627ef7003d8125019dff37e23a454c2b",
+    "bytes": 16355
+  },
+  {
+    "path": "deploy/installer/install.sh",
+    "sha256": "0f1bcb3d4e93c25def13764b866b5791ea24bc9a23f45e7cbf4d841fa892089b",
+    "bytes": 248
+  },
+  {
+    "path": "deploy/installer/manifest.py",
+    "sha256": "634e9e4c35ab5af38733caa8c2ab485ccbf8b19f40d3fb237080f699decfb0b1",
+    "bytes": 1646
+  },
+  {
+    "path": "deploy/operator-policy.json.example",
+    "sha256": "271dca2a436a0e3500f9fe5a7052ccd3044a542344b603f882ee755d3fa83f78",
+    "bytes": 948
+  },
+  {
+    "path": "docs/architecture.md",
+    "sha256": "7411dad21809ec7155bf8ba3130948d6a90fa2ad54d9a622808028a06dfd65d9",
+    "bytes": 2043
+  },
+  {
+    "path": "docs/configuration.md",
+    "sha256": "92905d214a16c71647a6a54867c7558fa29afb0a518b8405efb517d4da486fae",
+    "bytes": 2718
+  },
+  {
+    "path": "docs/development/ARTWORK-PROVENANCE.md",
+    "sha256": "196c63d421363e1bfe108e7fa823ca7deab3de17d4fd4f4f8bf8b3a7f9a6c1f9",
+    "bytes": 1437
+  },
+  {
+    "path": "docs/development/LICENSE-AUDIT.md",
+    "sha256": "77b2154968a0375b61b5076b882fd80822c5f1dbe296e06694bcabd6f596cd03",
+    "bytes": 1910
+  },
+  {
+    "path": "docs/development/PUBLICATION-MANIFEST.md",
+    "sha256": "83c0a469da4562a6f23dde2828a37fca93ccac61fe1f4335f8201bf279396d27",
+    "bytes": 2697
+  },
+  {
+    "path": "docs/development/RC1-ARTIFACT-VERIFICATION-HANDOFF.md",
+    "sha256": "02bcf77e32441eafe96e9ca26c9fd9ca1041e8a66cb71fe9e1fe447582bcfcc6",
+    "bytes": 3963
+  },
+  {
+    "path": "docs/development/README.md",
+    "sha256": "18bb088f06ceff016390b6e873bd1bf480c47a98c08dbf22ba6b6391f17b750d",
+    "bytes": 498
+  },
+  {
+    "path": "docs/development/rc1/PREPARATION-RESULTS.md",
+    "sha256": "72ccbb016eb6f2ea03fcd554bcd75c58716230d08c0e4a1ff58656c701d47a47",
+    "bytes": 3954
+  },
+  {
+    "path": "docs/development/rc1/THIRD-PARTY-INVENTORY.json",
+    "sha256": "49e64c4fea5744f303cdeb83f918e5fec11e4a46b5cc72e519a4883b1cc637ef",
+    "bytes": 30110
+  },
+  {
+    "path": "docs/docker.md",
+    "sha256": "4f201ec5f950269a092d97ff67088d377b29e21f21011e77274fec86fbebb00e",
+    "bytes": 3247
+  },
+  {
+    "path": "docs/installation.md",
+    "sha256": "0c4ab8b14122afdcb78e27debc2d5d5a74280c5d0fab48f2187c919c0cddb3be",
+    "bytes": 1776
+  },
+  {
+    "path": "docs/known-limitations.md",
+    "sha256": "4c95163bcb1115edc9ab2c20660be75951698f5dd037d5966e92de5616a3ee0d",
+    "bytes": 1305
+  },
+  {
+    "path": "docs/licenses/Apache-2.0.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "bytes": 11358
+  },
+  {
+    "path": "docs/licenses/Plyr-3.7.8-MIT.txt",
+    "sha256": "3092a30a4ded08145e3745173479f476ab47290334980cbeeb62f5d451d49850",
+    "bytes": 1076
+  },
+  {
+    "path": "docs/licenses/hls.js-1.6.2-Apache-2.0.txt",
+    "sha256": "ca8773cf798c7ed997d4dd7c8e23c348699f8d5b7462636694cc14de6cda12db",
+    "bytes": 1338
+  },
+  {
+    "path": "docs/licenses/javascript/@svta-common-media-library/LICENSE",
+    "sha256": "95cdf13a152329c8a60cf739d442f578a172727f0584bff42406126719312f62",
+    "bytes": 11366
+  },
+  {
+    "path": "docs/licenses/javascript/@svta-common-media-library/NOTICE",
+    "sha256": "075ae70818a55ab1b7e6bdb6db2505e146d81671f7f35c25856e061aa84464b3",
+    "bytes": 24084
+  },
+  {
+    "path": "docs/licenses/javascript/custom-event-polyfill/LICENSE",
+    "sha256": "b44cf85f7a490ef644dc4ebf1decefd7119c3a9ae8eeec4cb0f134c8c9919d38",
+    "bytes": 1079
+  },
+  {
+    "path": "docs/licenses/javascript/eventemitter3/LICENSE",
+    "sha256": "3aecc12b1cb28832b5f65ab64291de96568c3f236a74d646281b4491f7bcadbf",
+    "bytes": 1082
+  },
+  {
+    "path": "docs/licenses/javascript/loadjs/AUTHORS.txt",
+    "sha256": "017448027a23d0b2d5e73c1734e7b2f48bcdeccfd137d608636f08149b1d9a91",
+    "bytes": 188
+  },
+  {
+    "path": "docs/licenses/javascript/loadjs/LICENSE.txt",
+    "sha256": "9b7ad2c922bb096e21bec159105929da2f81a2a846e4f0e558b2c4235b9a5f85",
+    "bytes": 1079
+  },
+  {
+    "path": "docs/licenses/javascript/rangetouch/license.md",
+    "sha256": "313d697522b0207d171951e8cedb59d53245d4bdc19fc67abc86803678a372f8",
+    "bytes": 1076
+  },
+  {
+    "path": "docs/licenses/javascript/url-polyfill/LICENSE",
+    "sha256": "db40f3cb01d0a428b6cd3ffb8389e78d80fe9f2e154a2757c2cce9e60523e638",
+    "bytes": 1076
+  },
+  {
+    "path": "docs/licenses/javascript/url-toolkit/LICENSE",
+    "sha256": "0fa4bd51fab4d066970c481917d77f222253ee82344caf07efd03801aa558dff",
+    "bytes": 10758
+  },
+  {
+    "path": "docs/licenses/python/PyMySQL/licenses/LICENSE",
+    "sha256": "314120dc65f0800f738a4b31400c76ee14decd1fbe77ce9c3540a421b86ea7b6",
+    "bytes": 1070
+  },
+  {
+    "path": "docs/licenses/python/annotated-doc/licenses/LICENSE",
+    "sha256": "fff170779a6acbf65abdb405c087f1cee1786691e4a96a4034517e4a504a0cdf",
+    "bytes": 1086
+  },
+  {
+    "path": "docs/licenses/python/annotated-types/licenses/LICENSE",
+    "sha256": "fe1049884b1a0d9342901e88e07f32925d24b3121d9972b6a6805fb9824b095d",
+    "bytes": 1083
+  },
+  {
+    "path": "docs/licenses/python/anyio/licenses/LICENSE",
+    "sha256": "5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0",
+    "bytes": 1081
+  },
+  {
+    "path": "docs/licenses/python/boto3/LICENSE",
+    "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+    "bytes": 10174
+  },
+  {
+    "path": "docs/licenses/python/boto3/NOTICE",
+    "sha256": "04fb1e61484a7810f1ba09bb42bc01ca58c9af33927d7c5a21556e4c4d1c7fa4",
+    "bytes": 83
+  },
+  {
+    "path": "docs/licenses/python/botocore/LICENSE.txt",
+    "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+    "bytes": 10174
+  },
+  {
+    "path": "docs/licenses/python/botocore/NOTICE",
+    "sha256": "1d1c5a6f3d68cb11f4fad1afa86a7450d0286f15c176ef0ea048f255b46d95b0",
+    "bytes": 2467
+  },
+  {
+    "path": "docs/licenses/python/click/licenses/LICENSE.txt",
+    "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d",
+    "bytes": 1475
+  },
+  {
+    "path": "docs/licenses/python/fastapi/licenses/LICENSE",
+    "sha256": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e",
+    "bytes": 1086
+  },
+  {
+    "path": "docs/licenses/python/h11/licenses/LICENSE.txt",
+    "sha256": "37db5bb85926db28a427a25867f10b1232003aea1be69ccb851138adb8e6f361",
+    "bytes": 1124
+  },
+  {
+    "path": "docs/licenses/python/idna/licenses/LICENSE.md",
+    "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04",
+    "bytes": 1541
+  },
+  {
+    "path": "docs/licenses/python/jmespath/LICENSE",
+    "sha256": "6eefacfa4d71b82d08408c751470ac8d9854538da2142cb27be0287fb13d0ab9",
+    "bytes": 1113
+  },
+  {
+    "path": "docs/licenses/python/pydantic/licenses/LICENSE",
+    "sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3",
+    "bytes": 1129
+  },
+  {
+    "path": "docs/licenses/python/pydantic_core/licenses/LICENSE",
+    "sha256": "2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a",
+    "bytes": 1080
+  },
+  {
+    "path": "docs/licenses/python/python-dateutil/AUTHORS",
+    "sha256": "8747ac728d6aa5d1f66949b9f57513f0be05080c8ff0d3be26ffb94ebb4d437d",
+    "bytes": 6655
+  },
+  {
+    "path": "docs/licenses/python/python-dateutil/LICENSE",
+    "sha256": "ba00f51a0d92823b5a1cde27d8b5b9d2321e67ed8da9bc163eff96d5e17e577e",
+    "bytes": 2889
+  },
+  {
+    "path": "docs/licenses/python/redis/licenses/LICENSE",
+    "sha256": "a57b250a5bf03d7afe55b74063313f2adb7b00d546c0ab149a89398333fe3cc8",
+    "bytes": 1074
+  },
+  {
+    "path": "docs/licenses/python/s3transfer/LICENSE.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "bytes": 11358
+  },
+  {
+    "path": "docs/licenses/python/s3transfer/NOTICE.txt",
+    "sha256": "d8354e0fa7fb762da7bc054a8a6774a0b310dfbbc78006393ee573a0e57612b5",
+    "bytes": 83
+  },
+  {
+    "path": "docs/licenses/python/six/LICENSE",
+    "sha256": "4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0",
+    "bytes": 1066
+  },
+  {
+    "path": "docs/licenses/python/starlette/licenses/LICENSE.md",
+    "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf",
+    "bytes": 1518
+  },
+  {
+    "path": "docs/licenses/python/typing-inspection/licenses/LICENSE",
+    "sha256": "804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3",
+    "bytes": 1090
+  },
+  {
+    "path": "docs/licenses/python/typing_extensions/licenses/LICENSE",
+    "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+    "bytes": 13936
+  },
+  {
+    "path": "docs/licenses/python/urllib3/licenses/LICENSE.txt",
+    "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+    "bytes": 1093
+  },
+  {
+    "path": "docs/licenses/python/uvicorn/licenses/LICENSE.md",
+    "sha256": "efe1acf3e62fb99c288b0ec73e5a773b7268ef4320fe757ea994214e4b63c371",
+    "bytes": 1526
+  },
+  {
+    "path": "docs/native-linux.md",
+    "sha256": "1ba227be4ebf452e2657734d7025e5ba8f0685793806068f65e7c5b94bcf00b4",
+    "bytes": 1921
+  },
+  {
+    "path": "docs/quick-start.md",
+    "sha256": "c9dd37ef8c58e48f946eaf499587d6eac2a1772e9a3368fd34f263d62b2f1cf1",
+    "bytes": 1056
+  },
+  {
+    "path": "docs/release/IDENTITY.json",
+    "sha256": "08a9c96ec25badd3728f065dc2a99bb5af1fe9e5d4f058d106d3cf3828981cb3",
+    "bytes": 620
+  },
+  {
+    "path": "docs/release/PRODUCT-MANIFEST.json",
+    "sha256": "f3e4b08bb608d8a072fc48e4287f407c0249e962f179f0a2678e377c94eae466",
+    "bytes": 44572
+  },
+  {
+    "path": "docs/release/SERVICE-MANIFEST.json",
+    "sha256": "b6e165af653e3855facd20399d025c199d17c218308ba373482a3b50473f6ad9",
+    "bytes": 5434
+  },
+  {
+    "path": "docs/storage.md",
+    "sha256": "a5846666c9cdad1ad87c738361cad5cde34d728586d4336b40466f4b6d3a02c4",
+    "bytes": 2585
+  },
+  {
+    "path": "docs/troubleshooting.md",
+    "sha256": "dc2cea3430d74f769ace82cec4c918f4322428c6119e604a145163167ed12c52",
+    "bytes": 1498
+  },
+  {
+    "path": "docs/uninstall.md",
+    "sha256": "ef9aedfe3a0900437749d8da6613e5832e33354c4ef72bf5b4478012650cbb21",
+    "bytes": 975
+  },
+  {
+    "path": "docs/upgrading.md",
+    "sha256": "6c9baba509958600005657e09629310183f2a08f4c29da854fbc55f9063d661e",
+    "bytes": 1689
+  },
+  {
+    "path": "plugin/mod_videolesson/CHANGES.md",
+    "sha256": "3d66342f61f6ea757c73081261c65fee60c7183eb687d29d36d355919b8861c2",
+    "bytes": 427
+  },
+  {
+    "path": "plugin/mod_videolesson/LICENSE",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "bytes": 35149
+  },
+  {
+    "path": "plugin/mod_videolesson/README.md",
+    "sha256": "476e5187ec5c169b3679baa6f2aac9b5c4c3ab2452cf3329964a1c3b8669c1cb",
+    "bytes": 1193
+  },
+  {
+    "path": "plugin/mod_videolesson/ajax.php",
+    "sha256": "df4fb25cb29c24908638ae0144a6cd7623689a13ff57bfe281bd841606616ca3",
+    "bytes": 1620
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/codefortex.min.js",
+    "sha256": "2f8d811250bb654f7bd6af7bec5d3d53b595f9537ae60be34f55a9bb4e7a4a78",
+    "bytes": 5742
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/codefortex.min.js.map",
+    "sha256": "0c76c9085d16fd94eb6bfc8f18c61b1111115541a35f25f31ab9335813103fc8",
+    "bytes": 15306
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/constants.min.js",
+    "sha256": "16a84a273479c431480c667e234079abce1263467e90015888f471f176a7b8b4",
+    "bytes": 1070
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/constants.min.js.map",
+    "sha256": "fbfc8056d0bb45fb460a3a4fa768cc0018b1903de75f3b2f364fb970e552cfc7",
+    "bytes": 3160
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/debug.min.js",
+    "sha256": "f61cbf56ea460e19d71b70bc4fa9208e64e4471cfdc49179695fe01d84a7b73f",
+    "bytes": 1307
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/debug.min.js.map",
+    "sha256": "a6b701586dabb14c6e1395ccf886795f6de649286a5f969944092c5f5be235d2",
+    "bytes": 3312
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/filehash.min.js",
+    "sha256": "11c70d54e7772b30f3f9a1df4e514d1c1789663649e4f119eddf2f1068928989",
+    "bytes": 2414
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/filehash.min.js.map",
+    "sha256": "8d220161b44cf59265e7d0d288831073174ce66ff94ce9b66b16f4475b0321ba",
+    "bytes": 5975
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/folders.min.js",
+    "sha256": "75416787040484396c29939912ce3bee7bc16afd221075ce26f3ba5e9a462870",
+    "bytes": 21402
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/folders.min.js.map",
+    "sha256": "3cb6af88a3aa5176d12e059e1cc8b4ac9bf581d20d3d0d7c8b671933e73a1b5a",
+    "bytes": 50882
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/form.min.js",
+    "sha256": "17190d0ac089f209cd71e295b55f985e5b16f2629b20c39e2b0043a5f40fb2fb",
+    "bytes": 6808
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/form.min.js.map",
+    "sha256": "9971881bea88bde185907b9475d9fd3ad5a91079eab3199b422eb9e02638dfba",
+    "bytes": 13679
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/manage.min.js",
+    "sha256": "206f5e0096e53ec6b41f33b385f5d1f1f204e86c57e09946cbb91cd1ba367fe8",
+    "bytes": 26982
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/manage.min.js.map",
+    "sha256": "57305223bd927cf6b83d202566ed028a8975697415d976481ffb7fa75b62546f",
+    "bytes": 63733
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/processing.min.js",
+    "sha256": "e978e632d30b74fcfabc43193c43a5502373eaee4a090e4f2face31e239a9dc6",
+    "bytes": 2125
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/processing.min.js.map",
+    "sha256": "da5fda56f3c771ffaad459978f166184ce512c80de3ddc8c60bf1a6e56e316b4",
+    "bytes": 2850
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/report.min.js",
+    "sha256": "069ce8371e27ccd99cbc685917777c56b7a4485a11cde68969a42be926f53c9e",
+    "bytes": 1310
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/report.min.js.map",
+    "sha256": "9b02c9055f66d2ba88d4f2dddba8aa4b75ce326db58df77ae31e5ea7764686fe",
+    "bytes": 3287
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/script.min.js",
+    "sha256": "3a7263bfa18a9cb52b519231cffc6193f446c14a2d8ccaea72d4c78f87f208a0",
+    "bytes": 12401
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/script.min.js.map",
+    "sha256": "6b62cb3f7944975ebac9c08794bfffceeb199326f59f598bdc5c1c42a9f859fe",
+    "bytes": 30553
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/settings_hosting_toggle.min.js",
+    "sha256": "9dbe0e784e7168e6af13687ddb97493917b4fbb3c7bc2125d456c684558d0456",
+    "bytes": 2526
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/settings_hosting_toggle.min.js.map",
+    "sha256": "d5a4f2418937d325afd1973a3d515141dff52a71a6ffd29009090d5f4ba55ee2",
+    "bytes": 5730
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/setup_wizard.min.js",
+    "sha256": "e592358f4b0c77dae70bb0b986f9a943df6a6c0350846aef0b0cb3afa08cfc54",
+    "bytes": 6933
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/setup_wizard.min.js.map",
+    "sha256": "8a2eefbf1e5f59a1bdfcfc6b12155d831b93994754e5f00a7b4e351362699708",
+    "bytes": 16113
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/table.min.js",
+    "sha256": "33e133ad0128386c956a36b4b388d740092ba6d27defec6d8f113755563cabcf",
+    "bytes": 2649
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/table.min.js.map",
+    "sha256": "b49c2265ec8e11931a337cdd771a006c5837f416f0e32a1a3a8e7fcd9e7b0040",
+    "bytes": 7162
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/upload.min.js",
+    "sha256": "5c376df92af1954a899bcb3f86af594d0d8eabae4ad1a1c44005f4b089d9c84e",
+    "bytes": 6324
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/upload.min.js.map",
+    "sha256": "bb2181e1dafddafdf98c035b08c58a860a44d8982c2cde83b391c52da1a52a0b",
+    "bytes": 22132
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/vplyr.min.js",
+    "sha256": "8054c51157deda1006d6da3e5148373eb4c7d6cae718c3dbe86f8ff530300403",
+    "bytes": 24147
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/build/vplyr.min.js.map",
+    "sha256": "3d2f042c9059580fdc9e7f1a1d5945e75b766faad056fea6cb8658bb16afcffe",
+    "bytes": 59743
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/src/codefortex.js",
+    "sha256": "2830d6fc969a400f4d566782fc1e16050449bd88af947d24beef0af23c195598",
+    "bytes": 9586
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/src/constants.js",
+    "sha256": "3c3a0a988717caaf69ce04fdc20286f7fc9cbfbaea505d1dfcc2c201cad7807d",
+    "bytes": 2523
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/src/debug.js",
+    "sha256": "e392b19591b561f7bfb002506f682f078742fd64ef45a302bb4a4c19273a5ada",
+    "bytes": 2622
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/src/filehash.js",
+    "sha256": "15fa9469a54e1c5dedb289480725ebb9df6b5226e3ff3dbb694ae6f3515a0c5a",
+    "bytes": 3396
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/src/folders.js",
+    "sha256": "43a66772937a800f2b3e28775571c9da1027bb39493d839b8a750074656e380f",
+    "bytes": 36261
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/src/form.js",
+    "sha256": "fbbf94922af3702ae5bea16023787b8019b93a9e0bb422534e9c47aeadf3ee44",
+    "bytes": 9452
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/src/manage.js",
+    "sha256": "d4aa0de2c8f87e898607f6e232807d399a8a6224437e7de8bc832833df596f10",
+    "bytes": 44188
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/src/processing.js",
+    "sha256": "feae31a45821d8449e1d4b4d4ffb01677a8721ed09f180b41a938b985eefeaa9",
+    "bytes": 2062
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/src/report.js",
+    "sha256": "c8cdaef87370a4011e02a8b27cbbff019bf3eccb77f79105c16c72a5f3a6e33e",
+    "bytes": 2219
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/src/script.js",
+    "sha256": "f8a20be7ffd138214d5c47b81b4d3119cce45685eafb2588769b8536ca6b90fb",
+    "bytes": 21613
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/src/settings_hosting_toggle.js",
+    "sha256": "5e36c8071c11d2f0410804163cc324b73a2e7ace01675428e4eec26f5905b8a6",
+    "bytes": 4120
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/src/setup_wizard.js",
+    "sha256": "1f597b4fba71feaec52c64f42298e10d3c496d5536f7b7f1bb81a1da2f60a0d8",
+    "bytes": 12040
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/src/table.js",
+    "sha256": "55daa3a46b705305f5ce509b3ee8b122ecc487acc83c51c9383e31654a3690c9",
+    "bytes": 4850
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/src/upload.js",
+    "sha256": "5acbb5016718bbc6d2c9ea479fb3f96dc722a85e1b19359f8ce95e8ac6c178e5",
+    "bytes": 13536
+  },
+  {
+    "path": "plugin/mod_videolesson/amd/src/vplyr.js",
+    "sha256": "5c3b0ec391a93838f7c6482d578595c2133a4792bf91af277bbf8a4d7cbaedbb",
+    "bytes": 41219
+  },
+  {
+    "path": "plugin/mod_videolesson/backup/moodle2/backup_videolesson_activity_task.class.php",
+    "sha256": "1b9cad4ecda57b9b8a921c1fa74c0fbf99eac6eec0d31e0b32d000f4e16309ed",
+    "bytes": 2215
+  },
+  {
+    "path": "plugin/mod_videolesson/backup/moodle2/backup_videolesson_stepslib.php",
+    "sha256": "33d4e66fdfc45e9efc5202d9306aab512c279e92a027dcfd3e3df23d1864de7a",
+    "bytes": 2268
+  },
+  {
+    "path": "plugin/mod_videolesson/backup/moodle2/restore_videolesson_activity_task.class.php",
+    "sha256": "76d07aea54f1592901d89b1acf59955653b0672d21d609d773fb0352e313357c",
+    "bytes": 2774
+  },
+  {
+    "path": "plugin/mod_videolesson/backup/moodle2/restore_videolesson_stepslib.php",
+    "sha256": "907385efd2497af57cc5f32e7042c92a8606192fc679fbba9010597fcb0e33b4",
+    "bytes": 3429
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/access.php",
+    "sha256": "ef3c3b781e91c339b63a4df882b411683426c32c66a99c7e90c8a5fab0f85a76",
+    "bytes": 9783
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/activity.php",
+    "sha256": "6cd2ee0805d8eb3d94f2bbad3e0a0fe26a10ad4f8b14c8e742f6d095e38dc7a3",
+    "bytes": 29456
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/admin_setting_moopluginlicense.php",
+    "sha256": "47201af67a30a54fa74fd4ea17a1e26a881a4a1ff3a86e15920d4a92aa73cefa",
+    "bytes": 4867
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/analytics_base.php",
+    "sha256": "125bba1be2f8d660b2073678ed0b2ed57c66ea704dd2246ecd504bd23f776736",
+    "bytes": 19205
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/aws_handler.php",
+    "sha256": "c528949aad3e90d7e6e4ae1d7367a86a583bed3aed44ac1a62c1e47238f04217",
+    "bytes": 7801
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/aws_hosted_handler.php",
+    "sha256": "1508e011195d536c8e087ee839a222327c2fb2720fad03587e6c1a441280f441",
+    "bytes": 16211
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/aws_s3.php",
+    "sha256": "7ddd168074e8853c4f46d6a90d4c7b329ef94141850d37263de237bd3d4da3b2",
+    "bytes": 9359
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/aws_sdk_handler.php",
+    "sha256": "08a039f52b0f0d916e125169c2cc7a8fa72773f65615c1c74f9b1ad80645e5b5",
+    "bytes": 10326
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/cm_analytics.php",
+    "sha256": "62364f2773c523dda2ed9249b54c95026f6f9a67adec3a0180c613ea510464f0",
+    "bytes": 6329
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/completion/custom_completion.php",
+    "sha256": "7039586a69a7d25257f3a60af297d66b80d8cf398656149ab7a59bad82b7b449",
+    "bytes": 3820
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/conversion.php",
+    "sha256": "7b89d3eae6fe523403cd5005a4986f83d3e3561b19ac0a5f79e790e8a2c66be7",
+    "bytes": 22192
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/dynamodb_handler.php",
+    "sha256": "1ef8281caecb4b02d0f70030f99478a9e6243577cca8c4af66d1957eea611ffd",
+    "bytes": 2227
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/dynamodb_hosted_handler.php",
+    "sha256": "cd0d8537f1bd5c9cc707b435669cd723452a78ddb0d28f18f95a91553d2ba0a6",
+    "bytes": 2734
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/dynamodb_sdk_handler.php",
+    "sha256": "0163c078870ded681059610ed661160393969ac7f092d6b5fe1f4bd9710f4b1f",
+    "bytes": 5364
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/event/course_module_viewed.php",
+    "sha256": "24b9c1e25547d28a12a33977b76e0cdbd7832aaa5fcdec8265f4c36b67ee6409",
+    "bytes": 1717
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/activate_free_hosting.php",
+    "sha256": "d31e86c6106bb3ec880f2f1366540203326f24c6d1e1c2509bc6d37dc6d755c4",
+    "bytes": 3521
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/bulk_delete_videos.php",
+    "sha256": "039bb684c8959aa1e4b0bd3a389911b626c51d82b3413e4cd2b5eca0bcbd36fd",
+    "bytes": 4502
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/bulk_move_videos.php",
+    "sha256": "cc5a68217bb7a1c7eb160af8a71707942753c78a5268d973b25f326c45d14c04",
+    "bytes": 4496
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/complete_setup.php",
+    "sha256": "8da55937708d4cb969f26a6e9e0cc46a00026e0fa4974c78776f7a130fee0102",
+    "bytes": 2554
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/create_folder.php",
+    "sha256": "a63d2cf914a0f3ba6897e8d22c522b5f2078dc793bc3d22205470ffaad715ea3",
+    "bytes": 3878
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/delete_folder.php",
+    "sha256": "5ec5522239eec23cfae95bb0eb5dbd6cb4ede7137d6a9db970755d25bb6a0ece",
+    "bytes": 3551
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/generate_license.php",
+    "sha256": "c6938228b0c6e1758d6764df6c054c0561244c9db1990dc3423de80bcae6c33a",
+    "bytes": 3041
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/get_folder_tree.php",
+    "sha256": "6a397fcf4957c88bb1087263b80305d8e96aef112fb62548a082506ce83f3d74",
+    "bytes": 5657
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/get_subtitle_languages.php",
+    "sha256": "c3c18e1f0d9553f0805154087db3e677baac959e80c6ea1adb333cc5203bfe56",
+    "bytes": 7416
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/get_videos.php",
+    "sha256": "a63400767433123faf7370b294243cdca108b7a91f0d578da8afd351a552ef10",
+    "bytes": 7575
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/getsubtitles.php",
+    "sha256": "f0ac7957514ec07dae3200ea947fd666d5bca9dba84b8dde232421a585f3c273",
+    "bytes": 3393
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/mark_setup_step_complete.php",
+    "sha256": "e1d2943fe0b8a622b4cd7ec2d501511377fe7584b4b972819dbef6a9336ad07a",
+    "bytes": 2773
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/move_video.php",
+    "sha256": "369a0a888f5ba4f8579953eec585ee4234682b9f528a58db95dbb25ce82bb3c0",
+    "bytes": 3743
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/save_aws_settings.php",
+    "sha256": "17b4daf2d2d88fe4660bbc8e69fd796bbae803dafcfa17386d2d9c619765355a",
+    "bytes": 5601
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/save_hosting_type.php",
+    "sha256": "6ed12067dd4e8ca3a775e3c87eae92cbb20dae55cce637750949de2f90188234",
+    "bytes": 3128
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/save_license_key.php",
+    "sha256": "2f35d8a94779437e38bd3c263e42e5349a9f26bf45db11c6efede5bf5a70238e",
+    "bytes": 2888
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/trigger_subtitle.php",
+    "sha256": "57a57e35deabe2f8709a83fb46f7ee7daf426d5c172c54bc37ca38e2a7c5dc6d",
+    "bytes": 5928
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/update_folder.php",
+    "sha256": "3d1303de58871be6ce313a89baf0e5975a55a82b0a1a6b1565eab47cd1274395",
+    "bytes": 3960
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/update_sortorder.php",
+    "sha256": "86a749f871b624e1a009e89bde3e5560ec9e2b59cf7867725dc9eb67b954f143",
+    "bytes": 3855
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/validate_aws_connection.php",
+    "sha256": "fdc6fc6ac4310eea404a101881f9409a54056a12464911778916bff54dd14b39",
+    "bytes": 5681
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/videocheck.php",
+    "sha256": "f6d95c96e3b045e52e1a7339fec9914580d9d88a854b52ef0cd0f2c469b93b87",
+    "bytes": 3605
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/external/watchtime.php",
+    "sha256": "853be994f9ffbb1fb6c3d456818a7c5335319173a6a5e3acdefd735016a6d7d8",
+    "bytes": 13770
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/ffprobe.php",
+    "sha256": "9655c3a6c21566585e69bbd5661a3c58bbe3553a262b63ebfc641f139dc8bc1c",
+    "bytes": 8520
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/folder_manager.php",
+    "sha256": "6138e8241b36ae5e3b9b348ce99b1b9c0b2afad1a36b5bda41d9b7a57bfa0142",
+    "bytes": 29239
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/hosted_presigned_curl.php",
+    "sha256": "741fcf0f00f818299ff51d145f822437037c4d32bca36650e7a489757dd73e54",
+    "bytes": 3197
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/library/action/base.php",
+    "sha256": "fb92862622cccb32f0300f0b836d77f2db72359fe4948c3910daeeb4765c69ca",
+    "bytes": 4830
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/library/action/delete.php",
+    "sha256": "d024d383e44443de0033bc2fe68910e01051052f3a8ebda625c5c4a7a5d2cd3b",
+    "bytes": 1976
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/library/action/instances.php",
+    "sha256": "734a0d5e9e6652cb802698ea5bc25ba07fcc24992d6a06c2218c1de0ae882267",
+    "bytes": 3571
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/library/action/list_action.php",
+    "sha256": "dc821cbd14152229e5151dfc7948510af1fa705e9cff09c57404aa84e606b30e",
+    "bytes": 5236
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/library/action/retry.php",
+    "sha256": "a9fa6b31a6614108aedb301c36304c9ff73a9f4356614d79eb278cfd6dbf7d68",
+    "bytes": 3241
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/library/action/upload.php",
+    "sha256": "b50c4a3622cebf717e6a08e3adcabf4079b75ea2e63bf3be6bacbf0a8a86925f",
+    "bytes": 7741
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/library/action_router.php",
+    "sha256": "407715d062b2075af99bcea3ff2839e91de0a13b67b15e10dc346bcfb9a91710",
+    "bytes": 2277
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/license.php",
+    "sha256": "4a4d330a6e14427bc3ba14a41793f79c4ea1a1d1b19f87e5f892cdfc453525a0",
+    "bytes": 20263
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/access.php",
+    "sha256": "46e381389982cc2529333afb644447970a07a21710c78ac95cbc36c79243a947",
+    "bytes": 1352
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/form/manage_upload_form.php",
+    "sha256": "fa781bf5e593a053f29ec46dc225c15d22f0d3f3f9d9116f005ed5c8ffcb05ab",
+    "bytes": 6053
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/form/provision_form.php",
+    "sha256": "e108a15c1b0bdc341c38ffb5f7fcf7a32976b3cfdc03bab05761e03d85629c5d",
+    "bytes": 4497
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/gateway_provider.php",
+    "sha256": "c1545e79a09bcd0525390fb08151efead7ec6f6a3d120a1b6a5d4e894afead7e",
+    "bytes": 318
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/library.php",
+    "sha256": "00702c79412483f06b6dab7d5b7d026ee793a911b82843f3a6aaffb286c9bb77",
+    "bytes": 4262
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/provider.php",
+    "sha256": "fdd0242c6b228f951f0124a4771cb242679bc5ae9fd7412ffc61228db71f2095",
+    "bytes": 943
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/providers.php",
+    "sha256": "f4b3911b592c9c350a4ceac24c9a92e64d3718c0c260c633700180a12c046c90",
+    "bytes": 1734
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/provisioning.php",
+    "sha256": "7666a5d4e214c4c5932e86e9ebcc2d9630201315fe2c3bb525c24d3ea5234dc8",
+    "bytes": 6710
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/quota_setting.php",
+    "sha256": "e58ef44c9b8a71aeeb364d30976ef1df8c03ff61fa0f261d324f1b197f0ed1f4",
+    "bytes": 456
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/real_provider.php",
+    "sha256": "3d5ef4a027b31bd7b579e5fe5e7baea84574e5d8f65161c163f83dbbeec66794",
+    "bytes": 11515
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/reference_observer.php",
+    "sha256": "0e860b0c12af57d9537ea77030cfd37d4b86988169501cf9df82343cc9a011b2",
+    "bytes": 1853
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/references.php",
+    "sha256": "36523680024f17f2fe0e866ac8fd5af58bfaf402b999494f6162c0247b231f7f",
+    "bytes": 4488
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/replacement.php",
+    "sha256": "b02baf719e9d7a0cacaafe52e9b1de5990b56aa3074e97aa92b7c314e501a1d6",
+    "bytes": 6203
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/service_lifecycle.php",
+    "sha256": "82b836269f2e4ae8bcaab5b62713968c430199cf81f3650df1fa80f40b0cd051",
+    "bytes": 1011
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/service_setup.php",
+    "sha256": "0b89a7506b575b4eaf1fb97a0ad3dceab914b22f8ed3d433c41f2ba544f2b5aa",
+    "bytes": 4544
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/services/conversion_status_service.php",
+    "sha256": "8a464aca28d51b8e79eaee5d68c432f97400a16c3b7281f3db6f8ba59f3d7708",
+    "bytes": 4205
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/services/subtitle_service.php",
+    "sha256": "2138eedbe8bfdff03d976cfaa3d4b370a90f597a6ecdae9dc91735c06f60d5a3",
+    "bytes": 19856
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/services/video_list_service.php",
+    "sha256": "7dbce70bd4169c0e3302b9b237b41bcd033d4241203b7fa08f9ba5775107dbf6",
+    "bytes": 15405
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/source_policy.php",
+    "sha256": "30a4a538bc8f2138a272dec706f8cf2e6d329d2b890daa06567573ef43664531",
+    "bytes": 1783
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/storage_admin.php",
+    "sha256": "e1ec858625d8e209268d49784a98685fcfc50cd7d295f26b0a5e74c7c0c5e407",
+    "bytes": 2131
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/table/content_instances.php",
+    "sha256": "462184823035f9bad0316fc3c5b9c7d855a17be1206084fbe2236aed312f0346",
+    "bytes": 3166
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/upload_limit.php",
+    "sha256": "55e37fc2dcbd483fa927b6d8241beafc0b6e5b776f627e19e8077864bdd0d259",
+    "bytes": 998
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/upload_limit_setting.php",
+    "sha256": "fd3bcd7ef295e1b63a4962583122fd6a06ba45700b86b0d06bea9288f4e7c8e8",
+    "bytes": 460
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/upload_provider.php",
+    "sha256": "5219118696f813f9c97ac85595bd1ab580f40d50ed16a2207ab7052e24295181",
+    "bytes": 247
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/local/watch.php",
+    "sha256": "5763d4772a003bcb282cb8b360fdbcb520543a0f160c86641fe19d8fbb23ecd6",
+    "bytes": 10640
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/logs.php",
+    "sha256": "26d6aa0980e52da030dab0ba97e98f27771eb52dc385a69b16169539fa08d088",
+    "bytes": 1794
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/observer.php",
+    "sha256": "e18b10b13f2d5f5b90fa8ea0dcc91ad96cae154ce7764612afcdc0dfccd22948",
+    "bytes": 2363
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/output/videoname.php",
+    "sha256": "2d4a4f7924f4a7df3c54c8506c17f4d51a449afd9f4201708fd8dd73b4f514cf",
+    "bytes": 3009
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/privacy/provider.php",
+    "sha256": "ad1394dc3a502f0890370ed223b4a89f6f3e0ab51f65bb65130cd726fa303f42",
+    "bytes": 17713
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/sns_handler.php",
+    "sha256": "f0113fcb0aef96d5d65d1f6458da0e5e501f7555f060a683d1df8ec0dae0ad4f",
+    "bytes": 3625
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/sns_hosted_handler.php",
+    "sha256": "1d880b14e46a44516e1c68ea70d407101ec945be308680a55b498911b1474fbb",
+    "bytes": 3901
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/sns_sdk_handler.php",
+    "sha256": "5ad11e3161f88756568806fda39d166f9b0731b3711e604662ea56adc9873767",
+    "bytes": 4312
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/subtitle_languages.php",
+    "sha256": "c1826753447fe25049b034d9cd41083ef09724cc3fd1a4483db93f68236e1d39",
+    "bytes": 4682
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/task/add_conversion.php",
+    "sha256": "719ba8b0f2cf1efb03031360c65b1995c6684a98ebf8fcf45b42495ee95a5102",
+    "bytes": 1321
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/task/daily_task.php",
+    "sha256": "8e46289ed9b71f1671f202fdfe265f151996fbb9887dee8c0aba843907d71ad9",
+    "bytes": 1279
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/task/delete_input_files.php",
+    "sha256": "3c4641d1f304bbc4aedd4bafd744e729588c8c4054ce126ee39815629bfd7cfe",
+    "bytes": 1319
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/task/poll_stale_conversions.php",
+    "sha256": "063a320da5f9064a3f0bc68a3aeac75029adaee426824128dc759341b93d5f63",
+    "bytes": 1305
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/task/process_conversions.php",
+    "sha256": "29d2f7d059e19fa1246159e5a567efc3617c5e4db46988a861aaf4d25d5d98e7",
+    "bytes": 1302
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/task/reconcile.php",
+    "sha256": "6285f0760068cbf6baa8699c4038b48d9377219dacafa9efc2af9e969d80be7e",
+    "bytes": 905
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/task/send_error_log.php",
+    "sha256": "605c9df266f97525e1502b6cf91064d080cced13e9ee706bcab2e577d150d633",
+    "bytes": 1293
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/util.php",
+    "sha256": "b01bfc407e23473db6280e90de0bc631be576648593344f28848e083efca94ab",
+    "bytes": 31136
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/video_analytics.php",
+    "sha256": "e2969498b41a9a928caa410ed5a25e162113e594691b2d00bd4c0c5c454cd482",
+    "bytes": 9092
+  },
+  {
+    "path": "plugin/mod_videolesson/classes/videosource.php",
+    "sha256": "b621d5f16a8167b9d8ab678b20ad562b8f14ec4331ace44bbab4f21f071946e9",
+    "bytes": 22209
+  },
+  {
+    "path": "plugin/mod_videolesson/cli/reconcile.php",
+    "sha256": "6d7b7e453a33fd3539cec7989d6870ab5581d26380ab78159578b9cee70b5e96",
+    "bytes": 776
+  },
+  {
+    "path": "plugin/mod_videolesson/db/access.php",
+    "sha256": "92bc4adc91b7606add442dfd23d730083aeae28fc1dd34b3c77f628bd119a2fe",
+    "bytes": 2107
+  },
+  {
+    "path": "plugin/mod_videolesson/db/caches.php",
+    "sha256": "7980e81b636d210b9e0ff165ab93d9d633c78a29e6239e51708d5f89ae942343",
+    "bytes": 1771
+  },
+  {
+    "path": "plugin/mod_videolesson/db/events.php",
+    "sha256": "919d7c7c773e7dfc380a4821153868bccef04e0bcb9819781ee2d8c880293847",
+    "bytes": 1384
+  },
+  {
+    "path": "plugin/mod_videolesson/db/install.php",
+    "sha256": "0e1df8fd3e1255815f5bb66ae615f801ea3717bcc485fa490d6ca77bd3c87cb6",
+    "bytes": 1305
+  },
+  {
+    "path": "plugin/mod_videolesson/db/install.xml",
+    "sha256": "607eaf09034819516f2e848d540e8b40d4066c3f835792515b63bdf966d09f6c",
+    "bytes": 22160
+  },
+  {
+    "path": "plugin/mod_videolesson/db/messages.php",
+    "sha256": "7fee8ef3a329e51238139c9d5092e6627abdae55c8870bec3eccb9bd392179ed",
+    "bytes": 1304
+  },
+  {
+    "path": "plugin/mod_videolesson/db/services.php",
+    "sha256": "1c921ec92d5c9be432632298eaa60440c51fb8e8f6b0ee8757fae5c9972271f5",
+    "bytes": 1064
+  },
+  {
+    "path": "plugin/mod_videolesson/db/tasks.php",
+    "sha256": "970d31eb8d133f2d76158e6a49c9dbd75c700729049840a257841eb84ec52aba",
+    "bytes": 1206
+  },
+  {
+    "path": "plugin/mod_videolesson/db/upgrade.php",
+    "sha256": "13914a11744cb3a58b8e3dc1b7cdb4d7327df2b16158389e7c94e64ebe09e5a4",
+    "bytes": 6017
+  },
+  {
+    "path": "plugin/mod_videolesson/index.php",
+    "sha256": "92abf9240c60b47ce80ab9474902b8ec6a834e8b0f0fb96dec4678de2d716556",
+    "bytes": 1086
+  },
+  {
+    "path": "plugin/mod_videolesson/lang/en/videolesson.php",
+    "sha256": "6a899a802675ca2e2e8f80467d8df9f22eb66752ea9ab02e05be0fb179b400ac",
+    "bytes": 73263
+  },
+  {
+    "path": "plugin/mod_videolesson/lib.php",
+    "sha256": "1ae6a968450d056e27d01661f39d7d900efc81827c292784e8df988a7bad6c17",
+    "bytes": 10001
+  },
+  {
+    "path": "plugin/mod_videolesson/library.php",
+    "sha256": "6baaae394a13b8cd61ffb85751c4c904538a8a69af8cbc0acee48e84aa8be403",
+    "bytes": 1260
+  },
+  {
+    "path": "plugin/mod_videolesson/locallib.php",
+    "sha256": "6b991a5f3f0b233665e6e4328fecaeebf0518b678c645c0443fbc09a3933c5c2",
+    "bytes": 1020
+  },
+  {
+    "path": "plugin/mod_videolesson/manage.php",
+    "sha256": "d9df7bb94bd7ac8e49cf81be755d7e8c6244dc124ac53aa2f62551467675585a",
+    "bytes": 8635
+  },
+  {
+    "path": "plugin/mod_videolesson/media.php",
+    "sha256": "812cf46f507f255819fa76b55f5295ea0ee0142c040512d49fa745b7ce0f314e",
+    "bytes": 1919
+  },
+  {
+    "path": "plugin/mod_videolesson/mod_form.php",
+    "sha256": "95bb018be16a3f96330b48838b6cf184cdee19bf97e98c955a59dedc8a81f22c",
+    "bytes": 3527
+  },
+  {
+    "path": "plugin/mod_videolesson/pix/codefortex-controls.svg",
+    "sha256": "ba7cdcee8642808f0120605c96e41b5d8afb89b91a4f7dd6713af393510bb2b4",
+    "bytes": 2307
+  },
+  {
+    "path": "plugin/mod_videolesson/pix/monologo.png",
+    "sha256": "5d91fa1e272aa51b1fcc08c0aa512f7096f17dcce34158fadac56611a2c6fa61",
+    "bytes": 957
+  },
+  {
+    "path": "plugin/mod_videolesson/pix/monologo.svg",
+    "sha256": "c57b35429ef17c58d4f3ec9d2b0673d6ae84647a2b7b1262f10b98e12b8c5818",
+    "bytes": 454
+  },
+  {
+    "path": "plugin/mod_videolesson/pix/thumbnail.png",
+    "sha256": "1e41bb4ea38627849f4b8b1a6d1f0d158514f59e6fc11442cbd09784ea077ad6",
+    "bytes": 4185
+  },
+  {
+    "path": "plugin/mod_videolesson/pix/thumbnail.svg",
+    "sha256": "5e8bbfab29dc09fba5b56037110d4eaf7fea5067edc5389e0b7df045461b4216",
+    "bytes": 550
+  },
+  {
+    "path": "plugin/mod_videolesson/provision.php",
+    "sha256": "e1d38b9c7957e912b9c5933d34d546d722ca55a064bd0ce3b116faa3336d6989",
+    "bytes": 1030
+  },
+  {
+    "path": "plugin/mod_videolesson/proxy.php",
+    "sha256": "5a7a245c89c4f78ed0b7846858fcde36f00899b642ee37ecd0f5de0a8161b35c",
+    "bytes": 1105
+  },
+  {
+    "path": "plugin/mod_videolesson/report.php",
+    "sha256": "075277798835eec499a376b8f02f3439d751bd3e2cf79aaa757626a320e40135",
+    "bytes": 2324
+  },
+  {
+    "path": "plugin/mod_videolesson/resources/LICENSE-Apache-2.0",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "bytes": 11358
+  },
+  {
+    "path": "plugin/mod_videolesson/resources/LICENSE-hls.txt",
+    "sha256": "ca8773cf798c7ed997d4dd7c8e23c348699f8d5b7462636694cc14de6cda12db",
+    "bytes": 1338
+  },
+  {
+    "path": "plugin/mod_videolesson/resources/hls.min.js",
+    "sha256": "e65013dc3435b55a34b5257a7e65835926c1f4d57209dba89a810d3505f4f143",
+    "bytes": 524014
+  },
+  {
+    "path": "plugin/mod_videolesson/resources/plyr/LICENSE",
+    "sha256": "3092a30a4ded08145e3745173479f476ab47290334980cbeeb62f5d451d49850",
+    "bytes": 1076
+  },
+  {
+    "path": "plugin/mod_videolesson/resources/plyr/custom.css",
+    "sha256": "3f805a0647ab21c4b709ce8ceef3e199878a2e3134c3b84ff91c9bd30af1c84f",
+    "bytes": 382
+  },
+  {
+    "path": "plugin/mod_videolesson/resources/plyr/plyr.css",
+    "sha256": "2ee720801746a99015c74144707638048778223b2520c8228b627f7262fb122b",
+    "bytes": 32564
+  },
+  {
+    "path": "plugin/mod_videolesson/resources/plyr/plyr.min.css",
+    "sha256": "6bfc1e307a874e08da7f2529dd89cca1e4a213d32cc06afaa1086ed85179d8b1",
+    "bytes": 32526
+  },
+  {
+    "path": "plugin/mod_videolesson/resources/plyr/plyr.min.js",
+    "sha256": "ae7266d9eb50c1614c4f425edba8b3aa805b8b22c97cbbd360ae9a0ea47c02ad",
+    "bytes": 113187
+  },
+  {
+    "path": "plugin/mod_videolesson/resources/plyr/plyr.polyfilled.min.js",
+    "sha256": "b0fc604958d3c5d9b393c4a4e48f77e232ab9928ee1a585a0e87e97984b5b024",
+    "bytes": 119969
+  },
+  {
+    "path": "plugin/mod_videolesson/resources/plyr/readme_moodle.txt",
+    "sha256": "b86d7edba249c5b16aec0c38125ef79520988a0bb782c5e432e515c2a06b761d",
+    "bytes": 649
+  },
+  {
+    "path": "plugin/mod_videolesson/resources/readme_moodle.txt",
+    "sha256": "911074c6fe44eafbb132d44b61ff18651f640e94751afe21a997e2071c3243f3",
+    "bytes": 627
+  },
+  {
+    "path": "plugin/mod_videolesson/service_setup.php",
+    "sha256": "20fdca7b3a3607ce288d23035717a5da98c927770735e0535214ca080978b86f",
+    "bytes": 4058
+  },
+  {
+    "path": "plugin/mod_videolesson/settings.php",
+    "sha256": "b876642482fb5219cd961d207f02aabe9d6645fb24a7b38c5ca9b86efb37522a",
+    "bytes": 3277
+  },
+  {
+    "path": "plugin/mod_videolesson/setup.css",
+    "sha256": "fc520e29db87310cd5adaa37e17ae72dc691fd94c25b360966f1d6c0411379cd",
+    "bytes": 3373
+  },
+  {
+    "path": "plugin/mod_videolesson/storage.php",
+    "sha256": "96f1258412a36c77bf2b7bd5fb42ee94787fe7ff1d8a6baed3c76aad8d0d92be",
+    "bytes": 5382
+  },
+  {
+    "path": "plugin/mod_videolesson/styles.css",
+    "sha256": "0f14d739b8c257d839855011bfc85fda5af14ef1e8014c54afd704eb73fb195a",
+    "bytes": 2254
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/assign_folder_modal.mustache",
+    "sha256": "eed76d07f1778df8dccd96fa242cf15da0a1d2208dab44fe4a5b76ed8217fb33",
+    "bytes": 1352
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/breadcrumb.mustache",
+    "sha256": "fc4e69d03d636d5acfee8265968ee50bafa1c193421e4f2162801490b92796ce",
+    "bytes": 1664
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/codefortex_player.mustache",
+    "sha256": "ac5e609f63902f2f955f311b9b4c619134cbecf0e3261dd7176803e5f6a1fc7e",
+    "bytes": 388
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/error_player.mustache",
+    "sha256": "aa9bc114134d54fdcb1a37460ec59b6b94a4844b2cfb82dec5f3fe39cc791d17",
+    "bytes": 1002
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/error_transcoding_message.mustache",
+    "sha256": "f9d932064c17dbc97264806ffc4021b71a2d818058586bfdcffb51e5e468601f",
+    "bytes": 962
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/folder_modal_form.mustache",
+    "sha256": "2d49ab3b290a58a62b471bf6138ed8e7e7a5443e088b63fd60d4d4c36b9fef38",
+    "bytes": 1092
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/folder_tree.mustache",
+    "sha256": "b62be55cd495ab3aceb7ef05dee6ed528340d328bb9e1bcd2a6690d584019609",
+    "bytes": 4842
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/folder_tree_item.mustache",
+    "sha256": "322ca0de85a85b5a4b0fca21fa36752a3e128aca66e137ddf72133e9ed03ce0f",
+    "bytes": 3112
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/form_video_gallery.mustache",
+    "sha256": "f245481af423b2554106969bb89c984dfa5968764942bbd8b1c4c5b03f946b53",
+    "bytes": 1344
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/library_table.mustache",
+    "sha256": "e613adc1e219c6a7feac677985740d5d8c9ceaf44a7aabdb86dede59c8935432",
+    "bytes": 14227
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/license_details.mustache",
+    "sha256": "678e9b216bb29382a75cd9b91120c4773f7ecb8552b5bb30f34da585178958e8",
+    "bytes": 2121
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/loading_modal.mustache",
+    "sha256": "5b9bd4caf96796257a581a6a12e30307dea1be49518b59901f7ac47e903c9e8b",
+    "bytes": 1153
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/manage_filterbar.mustache",
+    "sha256": "3710ab113911a7cd6a3b44974028675ad57f7e44ff5ce4e561a32657a2345bac",
+    "bytes": 1888
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/player.mustache",
+    "sha256": "d7e5feae78a97921b5502de897c4d5e06133c5093e02c1ed9c31ef08895340a2",
+    "bytes": 864
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/processing_message.mustache",
+    "sha256": "482fe033bab2e16bf1a66f2b517e8f08f60738acf997c6b54609719f0dfde976",
+    "bytes": 1335
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/report_all.mustache",
+    "sha256": "382c741322ad907909e1bb8bae7760a6a208ce1f066ae32c722afaf2db355d33",
+    "bytes": 2994
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/report_charts.mustache",
+    "sha256": "1b05764d1f2cc77f37e3ce809e37e2b9546600e1c58986543d6835fd8c560205",
+    "bytes": 1420
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/report_impressions.mustache",
+    "sha256": "fd54429e4d225a2e87f20174e6855375ddc6d4dc1ca05de8cf4cd617402f9577",
+    "bytes": 1395
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/report_play_data.mustache",
+    "sha256": "7afb7ed882a7b3c55eaf1291ed1c3950c63f1da6f06d0d3b0fe9af3e982ac033",
+    "bytes": 5613
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/report_plays.mustache",
+    "sha256": "00a62f416fb646ce426833852af325bc4960f35108131f9cb91bb51078bec7e2",
+    "bytes": 1846
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/report_unique.mustache",
+    "sha256": "ae2923f27591522a6d6e76f8c3111426042c97eb7fc5b3d36f3bd0cdefc89e1d",
+    "bytes": 1358
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/setup_consent_modal.mustache",
+    "sha256": "ff1875bd67bd607c712dd2ddebdf89475a41148004714acc254a179f7db7248f",
+    "bytes": 1607
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/setup_wizard.mustache",
+    "sha256": "ab7a3f9b9eb0df20dfa64786518e46797a7ba84c8b4e24e991acbd2b12b8c532",
+    "bytes": 6275
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/setup_wizard_step1.mustache",
+    "sha256": "72b14c893a106c5dbc4c4c1b980b3aa0c1c71d6394d5216ff6f97433243f1411",
+    "bytes": 8351
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/setup_wizard_step2.mustache",
+    "sha256": "ca704001466c65ae9fee7d2cd863880694cb253ff3742d1a569abf459a5af573",
+    "bytes": 18988
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/setup_wizard_step2_external.mustache",
+    "sha256": "0d50d6657f190781805e34b87b92959671a6b245f689661758591831d969427c",
+    "bytes": 3175
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/setup_wizard_step2_hosted.mustache",
+    "sha256": "ebd1771e86f61d732d84af6bcff9065c926f66e85fb4114858309ccef2d00795",
+    "bytes": 5847
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/setup_wizard_step2_self.mustache",
+    "sha256": "de55d7dd5f12b3b02969fa1bf0ea4636327aa0590c15f94a0f46774951b763f3",
+    "bytes": 8028
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/setup_wizard_step3.mustache",
+    "sha256": "0dd14108691f1b761dd2420ec206bc8d5918c09ffe7c34f59a7764268af105f6",
+    "bytes": 2311
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/subtitle_modal.mustache",
+    "sha256": "89d67cb515e365d3997773d4405f33f000622b26181d55d5560a8c6f1d08ed67",
+    "bytes": 3507
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/table_videos.mustache",
+    "sha256": "e66298dc3d3c63ffc69bc2cf26f4873f404e6622185c58a2a5f737fec7d98a5c",
+    "bytes": 4105
+  },
+  {
+    "path": "plugin/mod_videolesson/templates/view_modal.mustache",
+    "sha256": "c86f85885707fbeff98148886a140e2bfc60672bea3646b8ecc75b3170916ab7",
+    "bytes": 1119
+  },
+  {
+    "path": "plugin/mod_videolesson/thirdpartylibs.xml",
+    "sha256": "88e84e6e7ba44bdbdfbc63264992694ddae54d6ea86d9a0183432d1eb79e8a88",
+    "bytes": 1071
+  },
+  {
+    "path": "plugin/mod_videolesson/upload.css",
+    "sha256": "a51d0f072b173f932162d6d2177873fac9982db83ea8ec21c9852b06d22372b4",
+    "bytes": 939
+  },
+  {
+    "path": "plugin/mod_videolesson/upload.php",
+    "sha256": "c81c69b30ded86800055dc3522d33ea363e7bdff79fb740e8d323641d56b7cf4",
+    "bytes": 3119
+  },
+  {
+    "path": "plugin/mod_videolesson/version.php",
+    "sha256": "949a2a5f984d317e250bb02bd284be030a43833faf7b4b3ef3097f6a3f23b6fa",
+    "bytes": 1128
+  },
+  {
+    "path": "plugin/mod_videolesson/view.php",
+    "sha256": "dea3b23eeb5561ac1634173de7908d5c66bf11e12f5a4684f7784a1976ea7809",
+    "bytes": 3721
+  },
+  {
+    "path": "scripts/amd/package-lock.json",
+    "sha256": "0b088d8c89a777079ba54f26c9b5992b299b7c074d65b2ce25675394a35eeecc",
+    "bytes": 23263
+  },
+  {
+    "path": "scripts/amd/package.json",
+    "sha256": "61365032293818e8587b840ac3202e645708617fda6f7bd14c0078f34e00273e",
+    "bytes": 125
+  },
+  {
+    "path": "scripts/build_upload_amd.cjs",
+    "sha256": "dffa6c5a93816b5503cadd7c14c89390f57b7e6c4489d2cc0ef41d77e6ee5c11",
+    "bytes": 1980
+  },
+  {
+    "path": "scripts/check_release.py",
+    "sha256": "6ddcfcca5c913d02bbc3534743598e381a0dca7d4a85110dc137edd50ff0fe3a",
+    "bytes": 3132
+  },
+  {
+    "path": "scripts/prepare_rc1.py",
+    "sha256": "11d00fced6bde40c5dcdc225cdb91f4cb6b01be390b1e9185355e4b028d60abb",
+    "bytes": 1887
+  },
+  {
+    "path": "scripts/public_release.py",
+    "sha256": "ac295a865d50f33470fed9a509bb2ea5dabe50d8591e795681152da44bdf3761",
+    "bytes": 11689
+  },
+  {
+    "path": "scripts/render_artwork.py",
+    "sha256": "75576d43786907d7e223f38ce622f7a79e4ccd0f294f1620591c859f2433bee2",
+    "bytes": 1603
+  },
+  {
+    "path": "service/video-service/Dockerfile",
+    "sha256": "0cecedc956fc049dcc028320603ef510e15384b7988321baa86aaccba916fb76",
+    "bytes": 818
+  },
+  {
+    "path": "service/video-service/LICENSE",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "bytes": 35149
+  },
+  {
+    "path": "service/video-service/README.md",
+    "sha256": "787fb621706d7ae7de35c257bf6eb9967f5ba1c7a8e5dc6c7f333b554cf03cee",
+    "bytes": 1028
+  },
+  {
+    "path": "service/video-service/VERSION",
+    "sha256": "034dc85925aa66e33eb527d602980dbc06406a8a4198c380c567573a19f1e952",
+    "bytes": 10
+  },
+  {
+    "path": "service/video-service/deployment/OPERATIONS.md",
+    "sha256": "4cca92955059dce3aa872fbea25a1feadc2e32a3ce32486f410e8b19593c4024",
+    "bytes": 2032
+  },
+  {
+    "path": "service/video-service/deployment/environment.example",
+    "sha256": "48129a1e14b13f4f9c963d5e7cb5ae152f5895a38f0ecd4ed5c4d55ae40ea881",
+    "bytes": 1829
+  },
+  {
+    "path": "service/video-service/migrations/001.sql",
+    "sha256": "481ef87be727907fb233052166a743f273fec35c0216465808d1972dcb6e5d2a",
+    "bytes": 2788
+  },
+  {
+    "path": "service/video-service/migrations/002.sql",
+    "sha256": "1dc364ec5bc008003fd3cfb8268b5efce1bb293c95499e9798854cc0cc0baad4",
+    "bytes": 327
+  },
+  {
+    "path": "service/video-service/migrations/003.sql",
+    "sha256": "a225d495baf57a4043926aab897cda2c71e641350563c17da03759b0d99e5ff0",
+    "bytes": 389
+  },
+  {
+    "path": "service/video-service/migrations/004.sql",
+    "sha256": "3577fdd28f653ceb1b09b2ecdf1ad94bf7e908686e44f0d0c639946ff99cd6bc",
+    "bytes": 456
+  },
+  {
+    "path": "service/video-service/migrations/005.sql",
+    "sha256": "89832e0726e1aa99db3a7af23fe94e068433622fd15896ff9fc6e66944212a42",
+    "bytes": 2010
+  },
+  {
+    "path": "service/video-service/pyproject.toml",
+    "sha256": "16b5cc5f0aeda31f81a48bb3821ac0d7c02c8c1f003a592f7f0ed533da8677fa",
+    "bytes": 386
+  },
+  {
+    "path": "service/video-service/release/python-sbom.json",
+    "sha256": "a4844eae0844623f0bdd0546b52cd977b4c0ebdbb6584b787b36c0edaefe41d2",
+    "bytes": 34972
+  },
+  {
+    "path": "service/video-service/requirements.lock",
+    "sha256": "d577501bedc1a8cad316c5049f912561b8d8994adba3ec3780c6f1d9b4d4502f",
+    "bytes": 14226
+  },
+  {
+    "path": "service/video-service/requirements.txt",
+    "sha256": "4f9a1ea6da8c1654c41cabbaae8f20c9ae0c0e63b31c622a669f739e9626fc2f",
+    "bytes": 38
+  },
+  {
+    "path": "service/video-service/service/__init__.py",
+    "sha256": "0a4d5448370821041e814f0d85fd09ccda28696a28584831cafd880fe015cf9a",
+    "bytes": 157
+  },
+  {
+    "path": "service/video-service/service/accounting.py",
+    "sha256": "d432ae5c9cfe43f78b59987cc7a202a2c68b5173cb479789ce11f3559daec2a6",
+    "bytes": 4970
+  },
+  {
+    "path": "service/video-service/service/api.py",
+    "sha256": "6f1fb458974ce1b26f08c4366c3f19fa7723c5cf546c6f9aed0a8caddecb23fb",
+    "bytes": 22932
+  },
+  {
+    "path": "service/video-service/service/capabilities.py",
+    "sha256": "c984a3a35dd57c8d1a204c54409a80c2acea328f25598063bdb891b931ba87c0",
+    "bytes": 1599
+  },
+  {
+    "path": "service/video-service/service/capacity.py",
+    "sha256": "04d22fd3e0cd23243edccdea27f5b0fbf3ace8d97d2d4bbb71addbe2bb91d964",
+    "bytes": 1802
+  },
+  {
+    "path": "service/video-service/service/config.py",
+    "sha256": "c53cc82b29f24b485a92399f6271b8d4c58832c6eb0dbe712802f490938fecd6",
+    "bytes": 6998
+  },
+  {
+    "path": "service/video-service/service/db.py",
+    "sha256": "9553ce19fffec9691b8f37ff8ea72273f79922df997b93374bc499111bec087f",
+    "bytes": 953
+  },
+  {
+    "path": "service/video-service/service/diagnostics.py",
+    "sha256": "4a1d0d20dbc8f383be5be3a69522236a3b341ab81452b876c91427dfe5a0d5c5",
+    "bytes": 1057
+  },
+  {
+    "path": "service/video-service/service/dispatcher.py",
+    "sha256": "644be713803ca8f1059fb5f63789eed9685de31720801f1d2010eb15f7d003a3",
+    "bytes": 2134
+  },
+  {
+    "path": "service/video-service/service/gateway.py",
+    "sha256": "4791d39f89e2fb08d37597adabc6988423c61fbfc3f1df228c5cdb97270c030a",
+    "bytes": 4870
+  },
+  {
+    "path": "service/video-service/service/hardening.py",
+    "sha256": "de41b4f13e42b2878d79c259be5000bea757161e9e312c22001e8a6a59455491",
+    "bytes": 4416
+  },
+  {
+    "path": "service/video-service/service/janitor.py",
+    "sha256": "9a6d4dcbd55900eb080c4b05a653ba40de4202f1ecd6db50fb5058e4ed395e98",
+    "bytes": 3663
+  },
+  {
+    "path": "service/video-service/service/migrate.py",
+    "sha256": "bc3cfc57d18fe33eb713794b7a572e0dddc5ed74731c87db2b50c3a4a88a56b9",
+    "bytes": 511
+  },
+  {
+    "path": "service/video-service/service/recycle.py",
+    "sha256": "991322a46774f903052320fae5d28ada659961993a1023c708ad607796ddb4a8",
+    "bytes": 2632
+  },
+  {
+    "path": "service/video-service/service/security.py",
+    "sha256": "5bce9fb135de989be4bf5c8110e0b2a2f56d303a40ecb50bd151721fd13967f4",
+    "bytes": 3170
+  },
+  {
+    "path": "service/video-service/service/storage.py",
+    "sha256": "845f7755ee68a2b85147efa1097b81d825eb876c968784f5438a7fa1e1d3e16e",
+    "bytes": 2323
+  },
+  {
+    "path": "service/video-service/service/storage_admin.py",
+    "sha256": "374070690220208a2dd831d149f72df1e57ea1dbf17d8732274d9710760601e1",
+    "bytes": 6823
+  },
+  {
+    "path": "service/video-service/service/worker.py",
+    "sha256": "ec3353fb77f382631d8eee84cb22c4e1dbb924a206902ce783d20588066d3582",
+    "bytes": 17665
+  },
+  {
+    "path": "tests/test_compatibility.php",
+    "sha256": "3b0064283eceaa6f74373a8323e547d58ec9fe27cf85ebb5b189906e787d5f0f",
+    "bytes": 1188
+  },
+  {
+    "path": "tests/test_moodle_setup.php",
+    "sha256": "2f5d90269ba87f1f06fea3e64c0a80c8e68b6dde0d73e44178741269050f0da9",
+    "bytes": 758
+  },
+  {
+    "path": "tests/test_os1_baseline.py",
+    "sha256": "0111c02afe6eccb39cb9d2a8f1086dfed37a2c16994f07f159431fc660609e68",
+    "bytes": 3964
+  },
+  {
+    "path": "tests/test_os2_storage.py",
+    "sha256": "0beb24b0e7fcba0f5c674e1d69dd22301f63a5391da94a1a1722d1b0e2c2e602",
+    "bytes": 6375
+  },
+  {
+    "path": "tests/test_release.py",
+    "sha256": "7bc05e07627495100e7eea6433d5773594f015d2418c5badf48586ad8fbf0e33",
+    "bytes": 3517
+  },
+  {
+    "path": "tests/test_upload_urls.cjs",
+    "sha256": "962b63600c700c0e33d0ce245996c566c72b9675688f36471936cfbc1062a37c",
+    "bytes": 5994
+  }
+]

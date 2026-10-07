@@ -1,0 +1,91 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright 2026 CodeFortex
+name: video-lesson
+x-service: &service
+  image: codefortex-video-service:0.5.0-rc1
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  tmpfs:
+    - /tmp:uid=10001,gid=10001,mode=0700,size=64m
+  networks: [private]
+  restart: unless-stopped
+  depends_on:
+    migrate: {condition: service_completed_successfully}
+services:
+  db:
+    image: mariadb:10.11@sha256:7f22313fc130a377a44999965bcb0a08dd5b21e8502824c1b864f792f9bc66ab
+    environment:
+      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/dbroot
+      MARIADB_DATABASE: video_lesson
+    secrets: [dbroot]
+    volumes:
+      - db:/var/lib/mysql
+      - ${VIDEO_CONFIG:?run prepare.py}/init.sql:/docker-entrypoint-initdb.d/01-users.sql:ro
+    networks: [private]
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      retries: 30
+    restart: unless-stopped
+  redis:
+    image: redis:7.2-bookworm@sha256:0637954999d01b7c9ce9167db2da50656e2590d3b884f1c600c5f63bb6e6773c
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ${VIDEO_CONFIG}/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - ${VIDEO_CONFIG}/users.acl:/usr/local/etc/redis/users.acl:ro
+    networks: [private]
+    restart: unless-stopped
+  migrate:
+    <<: *service
+    build:
+      context: ../..
+      dockerfile: deploy/docker/Dockerfile
+    env_file: ["${VIDEO_CONFIG}/migrate.env"]
+    command: ["python", "-m", "service.migrate"]
+    restart: "no"
+    depends_on:
+      db: {condition: service_healthy}
+      redis: {condition: service_started}
+  api:
+    <<: *service
+    env_file: ["${VIDEO_CONFIG}/api.env"]
+    command: ["uvicorn", "service.api:app", "--host", "0.0.0.0", "--port", "8090", "--no-access-log", "--no-proxy-headers"]
+  gateway:
+    <<: *service
+    env_file: ["${VIDEO_CONFIG}/gateway.env"]
+    command: ["uvicorn", "service.gateway:app", "--host", "0.0.0.0", "--port", "8091", "--no-access-log", "--no-proxy-headers"]
+  dispatcher:
+    <<: *service
+    env_file: ["${VIDEO_CONFIG}/dispatcher.env"]
+    command: ["python", "-m", "service.dispatcher"]
+  worker:
+    <<: *service
+    env_file: ["${VIDEO_CONFIG}/worker.env"]
+    command: ["python", "-m", "service.worker"]
+    cpus: 2
+    mem_limit: 2g
+    volumes:
+      - ${VIDEO_CONFIG}/staging:/var/lib/video-lesson/worker
+  janitor:
+    <<: *service
+    env_file: ["${VIDEO_CONFIG}/janitor.env"]
+    command: ["python", "-u", "-c", "import subprocess,time;\nwhile True:\n subprocess.run(['python','-m','service.janitor'],check=True); time.sleep(900)"]
+  proxy:
+    image: nginx:1.28-bookworm@sha256:552e7481ca93ffccd046aa658dbbed22caefbc09c66fa7cd247cbb90b8a5c609
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports: ["127.0.0.1:28090:8090", "127.0.0.1:28091:8091"]
+    networks: [private, edge]
+    depends_on: [api, gateway]
+    restart: unless-stopped
+    security_opt: [no-new-privileges:true]
+volumes:
+  db:
+networks:
+  private:
+    internal: true
+  edge:
+secrets:
+  dbroot:
+    file: ${VIDEO_CONFIG}/dbroot

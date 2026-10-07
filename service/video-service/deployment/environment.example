@@ -1,0 +1,44 @@
+# Deployment template only. No working credentials. One role-specific file per process.
+APP_ENV=production
+SERVICE_ROLE=api
+SERVICE_TENANT=REPLACE_WITH_STABLE_TENANT
+ALLOWED_HOSTS=video-api.example.invalid
+ALLOWED_ORIGINS=https://lms.example.invalid
+GATEWAY_ORIGIN=https://media.example.invalid
+DB_HOST=127.0.0.1
+DB_NAME=codefortex_video
+DB_USER=codefortex_api
+DB_PASSWORD_FILE=/run/secrets/database_password
+REDIS_URL=redis://127.0.0.1:6379/0
+REDIS_NAMESPACE=codefortex:video:REPLACE_WITH_STABLE_TENANT
+STORAGE_BACKEND=s3-compatible
+STORAGE_ENDPOINT=https://storage.example.invalid
+STORAGE_REGION=us-east-1
+STORAGE_ADDRESSING_STYLE=path
+# Optional private CA file; verification is never disabled.
+# STORAGE_CA_BUNDLE=/run/secrets/storage_ca.pem
+# Development only: APP_ENV=development plus STORAGE_ALLOW_INSECURE_HTTP=true.
+# Historical R2_ENDPOINT/R2_ACCESS_KEY/R2_SECRET_KEY remain aliases for R2 installs.
+RAW_BUCKET=REPLACE_WITH_PRIVATE_RAW_BUCKET
+PROCESSED_BUCKET=REPLACE_WITH_PRIVATE_PROCESSED_BUCKET
+STORAGE_ACCESS_KEY_FILE=/run/secrets/role_storage_access_key
+STORAGE_SECRET_KEY_FILE=/run/secrets/role_storage_secret_key
+SERVICE_KEY_ID=key-1
+SERVICE_AUTH_KEY_FILE=/run/secrets/moodle_rpc_key
+GRANT_KEY_FILE=/run/secrets/media_grant_key
+ALLOW_PRESIGNED_KEY_IDENTIFIER=explicitly-approved
+GRANT_TTL=300
+RATE_INGRESS_API=1200
+RATE_INGRESS_GATEWAY=6000
+RATE_RPC=6000
+RATE_UPLOAD=240
+RATE_GRANT=120
+RATE_ADMIN=300
+RATE_MEDIA=1200
+TMPDIR=/var/tmp/codefortex-video
+# Worker role: also enforce a deployment CPU quota (initially 3 CPUs on a shared 4-OCPU host).
+VIDEO_WORKER_CONCURRENCY=1
+VIDEO_FFMPEG_THREADS=2
+VIDEO_MAX_DURATION_SECONDS=21600
+# Codec threads 1..16, filter threads 1, sequential renditions. One worker replica initially.
+# Segment/rendition policy is signed and snapshotted. Raw retention is capped at one day.

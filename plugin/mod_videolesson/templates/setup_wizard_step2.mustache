@@ -1,0 +1,281 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_videolesson/setup_wizard_step2
+
+    Legacy setup wizard step 2 combined configuration form.
+}}
+
+<div class="setup-step-2">
+    <h4>{{#str}}setup:step2:heading, mod_videolesson{{/str}}</h4>
+    <p class="text-muted">
+        {{#str}}setup:step2:description, mod_videolesson{{/str}}
+        <a href="https://www.mooplugins.com/docs/self-hosting-vs-managed-hosting-plans/" target="_blank" class="ml-1">
+           {{#str}}setup:step2:readmore, mod_videolesson{{/str}}
+        </a>
+    </p>
+
+    {{#step2complete}}
+    <div class="alert alert-success mb-3">
+        <i class="fa fa-check-circle"></i> {{#str}}setup:step2:complete, mod_videolesson{{/str}}
+    </div>
+    {{/step2complete}}
+    <!-- Hosting Selection -->
+    <div class="hosting-selection mb-4">
+        <div class="row">
+            <!-- Self-Managed Option -->
+            <div class="col-md-6 mb-3">
+                <div class="hosting-option-card" data-option="self">
+                    <div class="card h-100 hosting-card">
+                        <div class="card-body text-center p-4">
+                            <div class="hosting-icon mb-3">
+                                <i class="fa fa-server fa-3x text-primary"></i>
+                            </div>
+                            <h5 class="card-title">{{#str}}setup:step2:selfmanaged:title, mod_videolesson{{/str}}</h5>
+                            <p class="card-text text-muted">{{#str}}setup:step2:selfmanaged:description, mod_videolesson{{/str}}</p>
+                            <div class="form-check d-inline-block">
+                                <input class="form-check-input" type="radio" name="hosting-type" id="hosting-self" value="self" {{#hostingtype}}{{#is_self}}checked{{/is_self}}{{/hostingtype}}>
+                                <label class="form-check-label" for="hosting-self">
+                                    <strong>Select Self-Managed</strong>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mooplugins Hosting Option -->
+            <div class="col-md-6 mb-3">
+                <div class="hosting-option-card" data-option="mooplugins">
+                    <div class="card h-100 hosting-card">
+                        <div class="card-body text-center p-4">
+                            <div class="hosting-icon mb-3">
+                                <i class="fa fa-cloud fa-3x text-primary"></i>
+                            </div>
+                            <h5 class="card-title">{{#str}}setup:step2:mooplugins:title, mod_videolesson{{/str}}</h5>
+                            <p class="card-text text-muted">{{#str}}setup:step2:mooplugins:description, mod_videolesson{{/str}}</p>
+                            <div class="form-check d-inline-block">
+                                <input class="form-check-input" type="radio" name="hosting-type" id="hosting-mooplugins" value="mooplugins" {{#hostingtype}}{{#is_hosted}}checked{{/is_hosted}}{{/hostingtype}}>
+                                <label class="form-check-label" for="hosting-mooplugins">
+                                    <strong>Select Mooplugins Hosting</strong>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dynamic Details Section -->
+    <div id="hosting-details" class="hosting-details" style="display: none;">
+        <!-- Self-Managed Details -->
+        <div id="self-managed-details" class="hosting-detail-content" style="display: none;">
+            <div class="card border-primary">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="fa fa-server"></i> {{#str}}setup:step2:selfmanaged:title, mod_videolesson{{/str}}</h5>
+                </div>
+                <div class="card-body">
+                    <p class="lead">{{#str}}setup:step2:selfmanaged:subtitle, mod_videolesson{{/str}}</p>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
+                            <div class="option-card p-3 border rounded h-100">
+                                <h6><i class="fa fa-tools text-primary"></i> <strong>{{#str}}setup:step2:selfmanaged:optiona:title, mod_videolesson{{/str}}</strong></h6>
+                                <p class="text-muted small">{{#str}}setup:step2:selfmanaged:optiona:description, mod_videolesson{{/str}}</p>
+                                <a href="https://www.mooplugins.com/docs/provisioning-aws-infrastructure-for-video-lesson-activity/" class="btn btn-outline-primary btn-sm mt-2" target="_blank">
+                                    <i class="fa fa-external-link"></i> {{#str}}setup:step2:selfmanaged:optiona:button, mod_videolesson{{/str}}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="option-card p-3 border rounded h-100 bg-light">
+                                <h6><i class="fa fa-handshake text-success"></i> <strong>{{#str}}setup:step2:selfmanaged:optionb:title, mod_videolesson{{/str}}</strong></h6>
+                                <p class="text-muted small mb-2">{{#str}}setup:step2:selfmanaged:optionb:promo:description, mod_videolesson{{/str}}</p>
+                                <ul class="list-unstyled small text-muted mb-2">
+                                    <li><i class="fa fa-check text-success"></i> One-time setup</li>
+                                    <li><i class="fa fa-check text-success"></i> 6 months support</li>
+                                    <li><i class="fa fa-check text-success"></i> Expert assistance</li>
+                                </ul>
+                                <a href="www.mooplugins.com/product/aws-provisioning-setup-for-video-lesson-activity/" class="btn btn-success btn-sm mt-2" target="_blank">
+                                    <i class="fa fa-shopping-cart"></i> {{#str}}setup:step2:selfmanaged:optionb:button, mod_videolesson{{/str}}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AWS Settings Form -->
+                    <div class="mt-4 pt-4 border-top">
+                        <h5>{{#str}}setup:step2:selfmanaged:settings:info, mod_videolesson{{/str}}</h5>
+                        <p class="mb-2">{{#str}}setup:step2:selfmanaged:settings:description, mod_videolesson{{/str}}</p>
+                        <p class="mb-0">{{#str}}setup:step2:selfmanaged:settings:help, mod_videolesson{{/str}} <a href="https://www.mooplugins.com/contact/" target="_blank">{{#str}}setup:step2:contactus, mod_videolesson{{/str}}</a>.</p>
+
+                        <form id="aws-settings-form" class="mt-3">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="aws-api-key">{{#str}}settings:aws:key, mod_videolesson{{/str}}</label>
+                                        <input type="text" class="form-control" id="aws-api-key" name="api_key" value="{{awssettings.api_key}}" placeholder="{{#str}}settings:aws:key, mod_videolesson{{/str}}">
+                                        <small class="form-text text-muted">{{#str}}settings:aws:key_help, mod_videolesson{{/str}}</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="aws-api-secret">{{#str}}settings:aws:secret, mod_videolesson{{/str}}</label>
+                                        <input type="password" class="form-control" id="aws-api-secret" name="api_secret" value="{{awssettings.api_secret}}" placeholder="{{#str}}settings:aws:secret, mod_videolesson{{/str}}">
+                                        <small class="form-text text-muted">{{#str}}settings:aws:secret_help, mod_videolesson{{/str}}</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="aws-s3-input-bucket">{{#str}}settings:aws:input_bucket, mod_videolesson{{/str}}</label>
+                                        <input type="text" class="form-control" id="aws-s3-input-bucket" name="s3_input_bucket" value="{{awssettings.s3_input_bucket}}" placeholder="{{#str}}settings:aws:input_bucket, mod_videolesson{{/str}}">
+                                        <small class="form-text text-muted">{{#str}}settings:aws:input_bucket_help, mod_videolesson{{/str}}</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="aws-s3-output-bucket">{{#str}}settings:aws:output_bucket, mod_videolesson{{/str}}</label>
+                                        <input type="text" class="form-control" id="aws-s3-output-bucket" name="s3_output_bucket" value="{{awssettings.s3_output_bucket}}" placeholder="{{#str}}settings:aws:output_bucket, mod_videolesson{{/str}}">
+                                        <small class="form-text text-muted">{{#str}}settings:aws:output_bucket_help, mod_videolesson{{/str}}</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="aws-api-region">{{#str}}settings:aws:region, mod_videolesson{{/str}}</label>
+                                        <select class="form-control" id="aws-api-region" name="api_region">
+                                            {{#regionoptions}}
+                                            <option value="{{key}}" {{#selected}}selected="selected"{{/selected}}>{{value}}</option>
+                                            {{/regionoptions}}
+                                        </select>
+                                        <small class="form-text text-muted">{{#str}}settings:aws:region_help, mod_videolesson{{/str}}</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="aws-dynamodb-table">{{#str}}settings:aws:dynamodb_table_name, mod_videolesson{{/str}}</label>
+                                        <input type="text" class="form-control" id="aws-dynamodb-table" name="dynamodb_table_name" value="{{awssettings.dynamodb_table_name}}" placeholder="videolesson-transcoding-status">
+                                        <small class="form-text text-muted">{{#str}}settings:aws:dynamodb_table_name_help, mod_videolesson{{/str}}</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="aws-sns-topic-arn">{{#str}}settings:aws:sns_topic_arn, mod_videolesson{{/str}}</label>
+                                        <input type="text" class="form-control" id="aws-sns-topic-arn" name="sns_topic_arn" value="{{awssettings.sns_topic_arn}}" placeholder="{{#str}}settings:aws:sns_topic_arn, mod_videolesson{{/str}}">
+                                        <small class="form-text text-muted">{{#str}}settings:aws:sns_topic_arn_desc, mod_videolesson{{/str}}</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="aws-cloudfront-domain">{{#str}}settings:aws:cloudfrontdomain, mod_videolesson{{/str}}</label>
+                                        <input type="url" class="form-control" id="aws-cloudfront-domain" name="cloudfrontdomain" value="{{awssettings.cloudfrontdomain}}" placeholder="{{#str}}settings:aws:cloudfrontdomain, mod_videolesson{{/str}}">
+                                        <small class="form-text text-muted">{{#str}}settings:aws:cloudfrontdomain_help, mod_videolesson{{/str}}</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions mt-3">
+                                <button type="button" class="btn btn-primary" id="save-aws-settings-btn">
+                                    <i class="fa fa-save"></i> {{#str}}setup:step2:selfmanaged:settings:save, mod_videolesson{{/str}}
+                                </button>
+                                <span id="aws-settings-saved" class="ml-3 text-success" style="display: none;">
+                                    <i class="fa fa-check-circle"></i> {{#str}}setup:step2:settings:saved, mod_videolesson{{/str}}
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mooplugins Hosting Details -->
+        <div id="mooplugins-details" class="hosting-detail-content" style="display: none;">
+            <div class="card border-primary">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="fa fa-cloud"></i> {{#str}}setup:step2:mooplugins:title, mod_videolesson{{/str}}</h5>
+                </div>
+                <div class="card-body">
+                    <p class="lead">{{#str}}setup:step2:mooplugins:subtitle, mod_videolesson{{/str}}</p>
+
+                    <div class="alert alert-info mb-3">
+                        <i class="fa fa-info-circle"></i> {{#str}}setup:step2:mooplugins:info, mod_videolesson{{/str}}
+                    </div>
+
+                    <div class="promotional-banner p-4 bg-light border rounded text-center">
+                        <h5 class="mb-3">{{#str}}setup:step2:mooplugins:promo:title, mod_videolesson{{/str}}</h5>
+                        <p class="text-muted mb-3">{{#str}}setup:step2:mooplugins:promo:description, mod_videolesson{{/str}}</p>
+                        <ul class="list-unstyled mb-3">
+                            <li><i class="fa fa-check text-success"></i> Fully managed infrastructure</li>
+                            <li><i class="fa fa-check text-success"></i> No AWS setup required</li>
+                            <li><i class="fa fa-check text-success"></i> Automatic scaling</li>
+                            <li><i class="fa fa-check text-success"></i> 24/7 monitoring</li>
+                        </ul>
+                        <a href="https://www.mooplugins.com/moodle-video-lesson-activity-plugin/" class="btn btn-primary btn-lg" target="_blank">
+                            <i class="fa fa-external-link"></i> {{#str}}setup:step2:mooplugins:button, mod_videolesson{{/str}}
+                        </a>
+                    </div>
+
+                    <!-- License Key Settings -->
+                    <div class="license-settings-section mt-4 mb-4">
+                        <div class="alert alert-info">
+                            <i class="fa fa-info-circle"></i> <strong>{{#str}}setup:step2:mooplugins:license:info, mod_videolesson{{/str}}</strong>
+                            <p class="mb-0 mt-2">{{#str}}setup:step2:mooplugins:license:description, mod_videolesson{{/str}}</p>
+                        </div>
+
+                        <form id="license-key-form" class="mt-3">
+                            <div class="form-group">
+                                <label for="license-key-input">{{#str}}settings:aws:moopluginlicense, mod_videolesson{{/str}}</label>
+                                <input type="text" class="form-control" id="license-key-input" name="license_key" value="{{hostinglicensekey}}" placeholder="{{#str}}settings:aws:moopluginlicense, mod_videolesson{{/str}}">
+                                <small class="form-text text-muted">{{#str}}settings:aws:moopluginlicense_help, mod_videolesson{{/str}}</small>
+                            </div>
+
+                            <div class="form-actions mt-3">
+                                <button type="button" class="btn btn-primary" id="save-license-key-btn">
+                                    <i class="fa fa-save"></i> {{#str}}setup:step2:mooplugins:license:save, mod_videolesson{{/str}}
+                                </button>
+                                <span id="license-key-saved" class="ml-3 text-success" style="display: none;">
+                                    <i class="fa fa-check-circle"></i> {{#str}}setup:step2:license:saved, mod_videolesson{{/str}}
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="setup-actions mt-4">
+        <button type="button" class="btn btn-secondary" id="step2-prev-btn">
+            {{#str}}setup:previous, mod_videolesson{{/str}}
+        </button>
+        <button type="button" class="btn btn-primary" id="step2-next-btn" disabled>
+            {{#str}}setup:next, mod_videolesson{{/str}}
+        </button>
+    </div>
+</div>

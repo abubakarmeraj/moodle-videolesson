@@ -1,0 +1,104 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_videolesson/folder_tree
+
+    Template for displaying folder tree hierarchy.
+
+    Classes required for JS:
+    * videolesson-folder-item - Folder item container
+    * videolesson-folder-tree-container - Main container
+
+    Data attributes required for JS:
+    * data-folder-id - Folder ID
+    * data-folder-depth - Folder depth level
+    * data-droppable - Whether folder accepts drops
+
+    Example context (json):
+    {
+        "folders": [
+            {
+                "id": 1,
+                "name": "Folder 1",
+                "parent": null,
+                "depth": 0,
+                "path": "/1/",
+                "sortorder": 0,
+                "video_count": 5,
+                "children": []
+            }
+        ],
+        "selected_folder": null,
+        "can_manage": true
+    }
+}}
+
+<div class="videolesson-folder-tree-container" data-selected-folder="{{selected_folder.value}}">
+    <div class="videolesson-folder-toolbar mb-2">
+        <button type="button" class="btn btn-primary btn-sm videolesson-create-folder" data-parent-id="0">
+            <i class="icon fa fa-folder-plus fa-fw" aria-hidden="true"></i> {{#str}}folder:new, mod_videolesson{{/str}}
+        </button>
+        <a href="#" class="videolesson-collapse-all ml-auto" title="{{#str}}folder:collapse_all, mod_videolesson{{/str}}" role="button" aria-label="{{#str}}folder:collapse_all, mod_videolesson{{/str}}">
+            <i class="icon fa fa-compress fa-fw mr-0" aria-hidden="true"></i>
+        </a>
+    </div>
+
+    <div class="videolesson-folder-list">
+        <div class="videolesson-folder-item videolesson-folder-root {{#selected_folder}}{{#selected_folder.is_all}}selected{{/selected_folder.is_all}}{{/selected_folder}}"
+             data-folder-id="all"
+             data-folder-depth="0"
+             data-droppable="true">
+            <div class="folder-content">
+                <span class="folder-icon"><i class="icon fa fa-video fa-fw" aria-hidden="true"></i></span>
+                <span class="folder-name">{{#str}}folder:all_videos, mod_videolesson{{/str}}</span>
+                <span class="folder-count">
+                    {{#totalcount}}
+                        <span class="video-count-number">{{totalcount}}</span>
+                        <i class="icon fa fa-video fa-fw" aria-hidden="true" title="{{#str}}folder:video_count, mod_videolesson, {{totalcount}}{{/str}}"></i>
+                    {{/totalcount}}
+                    {{^totalcount}}
+                        <i class="icon fa fa-video fa-fw text-muted" aria-hidden="true" title="{{#str}}folder:no_videos, mod_videolesson{{/str}}"></i>
+                    {{/totalcount}}
+                </span>
+            </div>
+        </div>
+
+        <div class="videolesson-folder-item videolesson-folder-uncategorized {{#selected_folder}}{{#selected_folder.is_uncategorized}}selected{{/selected_folder.is_uncategorized}}{{/selected_folder}}"
+             data-folder-id="uncategorized"
+             data-folder-depth="0"
+             data-droppable="true">
+            <div class="folder-content">
+                <span class="folder-spacer"></span>
+                <span class="folder-icon"><i class="icon fa fa-folder-open fa-fw" aria-hidden="true"></i></span>
+                <span class="folder-name">{{#str}}folder:uncategorized, mod_videolesson{{/str}}</span>
+                <span class="folder-count">
+                    {{#uncategorized_count}}
+                        <span class="video-count-number">{{uncategorized_count}}</span>
+                        <i class="icon fa fa-video fa-fw" aria-hidden="true" title="{{#str}}folder:video_count, mod_videolesson, {{uncategorized_count}}{{/str}}"></i>
+                    {{/uncategorized_count}}
+                    {{^uncategorized_count}}
+                        <i class="icon fa fa-video fa-fw text-muted" aria-hidden="true" title="{{#str}}folder:no_videos, mod_videolesson{{/str}}"></i>
+                    {{/uncategorized_count}}
+                </span>
+            </div>
+        </div>
+
+        {{#folders}}
+            {{> mod_videolesson/folder_tree_item }}
+        {{/folders}}
+    </div>
+</div>

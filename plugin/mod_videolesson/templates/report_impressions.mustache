@@ -1,0 +1,44 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_videolesson/report_impressions
+
+    Report tab with impression totals and listing.
+}}
+
+<h5>
+  {{#str}}report:impressions:header, mod_videolesson{{/str}} ({{{total}}})
+</h5>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">{{#str}}report:impressions:col:user, mod_videolesson{{/str}}</th>
+      <th scope="col">{{#str}}report:impressions:col:time, mod_videolesson{{/str}}</th>
+      <th scope="col">{{#str}}report:impressions:col:others, mod_videolesson{{/str}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#data}}
+      <tr>
+        <td>{{{userid}}}</td>
+        <td>{{{timestamp}}}</td>
+        <td>{{{combined}}}</td>
+      </tr>
+    {{/data}}
+  </tbody>
+</table>

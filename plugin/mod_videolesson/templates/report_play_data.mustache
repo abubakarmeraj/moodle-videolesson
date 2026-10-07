@@ -1,0 +1,182 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_videolesson/report_play_data
+
+    Report detail view for a single play record.
+}}
+
+<p>
+  {{#str}}report:play:user, mod_videolesson{{/str}} {{{user.fullname}}} <br>
+  {{#str}}report:play:time, mod_videolesson{{/str}} {{{sessiondata.timestamp}}} <br>
+  {{#str}}report:play:city, mod_videolesson{{/str}} {{{sessiondata.city}}} <br>
+  {{#str}}report:play:country, mod_videolesson{{/str}} {{{sessiondata.country}}} <br>
+  {{#str}}report:play:ip, mod_videolesson{{/str}} {{{sessiondata.ip}}} <br>
+  {{#str}}report:play:platform, mod_videolesson{{/str}} {{{sessiondata.platform}}} <br>
+  {{#str}}report:play:browser, mod_videolesson{{/str}} {{{sessiondata.browser}}} <br>
+  {{#str}}report:play:os, mod_videolesson{{/str}} {{{sessiondata.os}}} <br>
+</p>
+
+<hr>
+
+<h5>
+  {{#str}}report:play:playback:header, mod_videolesson{{/str}}
+</h5>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">{{#str}}report:play:playback:col:type, mod_videolesson{{/str}}</th>
+      <th scope="col">{{#str}}report:play:playback:col:time, mod_videolesson{{/str}}</th>
+      <th scope="col">{{#str}}report:play:playback:col:position, mod_videolesson{{/str}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#sessiondata.playbackEvents}}
+      <tr>
+        <td>{{{event_type}}}</td>
+        <td>{{{timestamp}}}</td>
+        <td>{{{position}}}</td>
+      </tr>
+    {{/sessiondata.playbackEvents}}
+    {{^sessiondata.playbackEvents}}
+    <tr>
+        <td colspan="3">{{#str}}report:nodata, mod_videolesson{{/str}}</td>
+    </tr>
+    {{/sessiondata.playbackEvents}}
+  </tbody>
+</table>
+
+<hr>
+
+<h5>
+  {{#str}}report:play:seek:header, mod_videolesson{{/str}}
+</h5>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">{{#str}}report:play:seek:col:time, mod_videolesson{{/str}}</th>
+      <th scope="col">{{#str}}report:play:seek:col:startposition, mod_videolesson{{/str}}</th>
+      <th scope="col">{{#str}}report:play:seek:col:newposition, mod_videolesson{{/str}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#sessiondata.seekEvents}}
+      <tr>
+        <td>{{{timestamp}}}</td>
+        <td>{{{start}}}</td>
+        <td>{{{position}}}</td>
+      </tr>
+    {{/sessiondata.seekEvents}}
+    {{^sessiondata.seekEvents}}
+    <tr>
+        <td colspan="3">{{#str}}report:nodata, mod_videolesson{{/str}}</td>
+    </tr>
+    {{/sessiondata.seekEvents}}
+  </tbody>
+</table>
+<hr>
+
+<h5>
+  {{#str}}report:play:visibility:header, mod_videolesson{{/str}}
+</h5>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">{{#str}}report:play:visibility:col:time, mod_videolesson{{/str}}</th>
+      <th scope="col">{{#str}}report:play:visibility:col:position, mod_videolesson{{/str}}</th>
+      <th scope="col">{{#str}}report:play:visibility:col:active, mod_videolesson{{/str}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#sessiondata.visibility}}
+      <tr>
+        <td>{{{timestamp}}}</td>
+        <td>{{{position}}}</td>
+        <td>{{#active}}{{#str}}report:play:visibility:yes, mod_videolesson{{/str}}{{/active}}{{^active}}{{#str}}report:play:visibility:no, mod_videolesson{{/str}}{{/active}}</td>
+      </tr>
+    {{/sessiondata.visibility}}
+    {{^sessiondata.visibility}}
+    <tr>
+        <td colspan="3">{{#str}}report:nodata, mod_videolesson{{/str}}</td>
+    </tr>
+    {{/sessiondata.visibility}}
+  </tbody>
+</table>
+
+<hr>
+
+<h5>
+  {{#str}}report:play:volume:header, mod_videolesson{{/str}}
+</h5>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">{{#str}}report:play:volume:col:time, mod_videolesson{{/str}}</th>
+      <th scope="col">{{#str}}report:play:volume:col:position, mod_videolesson{{/str}}</th>
+      <th scope="col">{{#str}}report:play:volume:col:level, mod_videolesson{{/str}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#sessiondata.volumeChanges}}
+      <tr>
+        <td>{{{timestamp}}}</td>
+        <td>{{{position}}}</td>
+        <td>{{{volume_level}}}</td>
+      </tr>
+    {{/sessiondata.volumeChanges}}
+    {{^sessiondata.volumeChanges}}
+    <tr>
+        <td colspan="3">{{#str}}report:nodata, mod_videolesson{{/str}}</td>
+    </tr>
+    {{/sessiondata.volumeChanges}}
+  </tbody>
+</table>
+
+<hr>
+<h5>
+  {{#str}}report:play:quality:header, mod_videolesson{{/str}}
+</h5>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">{{#str}}report:play:quality:col:time, mod_videolesson{{/str}}</th>
+      <th scope="col">{{#str}}report:play:quality:col:position, mod_videolesson{{/str}}</th>
+      <th scope="col">{{#str}}report:play:quality:col:quality, mod_videolesson{{/str}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#sessiondata.qualityChanges}}
+      <tr>
+        <td>{{{timestamp}}}</td>
+        <td>{{{position}}}</td>
+        <td>{{{quality}}}</td>
+      </tr>
+    {{/sessiondata.qualityChanges}}
+    {{^sessiondata.qualityChanges}}
+    <tr>
+        <td colspan="3">{{#str}}report:nodata, mod_videolesson{{/str}}</td>
+    </tr>
+    {{/sessiondata.qualityChanges}}
+  </tbody>
+</table>
+
+<hr>

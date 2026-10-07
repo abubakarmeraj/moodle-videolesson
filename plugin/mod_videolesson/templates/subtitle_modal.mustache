@@ -1,0 +1,87 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_videolesson/subtitle_modal
+
+    Modal for selecting subtitle languages.
+}}
+<div class="subtitle-modal-content">
+    <div class="form-group">
+        <label for="subtitle-language-select">{{#str}}subtitle:select_language, mod_videolesson{{/str}}</label>
+        {{#canSelectMore}}
+        <select id="subtitle-language-select" class="form-control" multiple size="10">
+            {{#languages}}
+            <option value="{{code}}">{{name}}</option>
+            {{/languages}}
+        </select>
+        {{/canSelectMore}}
+        {{^canSelectMore}}
+        <select id="subtitle-language-select" class="form-control" multiple size="10" disabled>
+            <option>{{#str}}subtitle:modal:remaining, mod_videolesson, 0{{/str}}</option>
+        </select>
+        {{/canSelectMore}}
+        <small class="form-text text-muted">{{#str}}subtitle:modal:body, mod_videolesson{{/str}}</small>
+    </div>
+    {{#existing.length}}
+    <div class="form-group mt-3">
+        <label>{{#str}}subtitle:modal:existing, mod_videolesson{{/str}}</label>
+        <div class="existing-subtitles">
+            {{#existing}}
+            <span class="badge badge-success mr-1 mb-1">{{#name}}{{name}}{{/name}}{{^name}}{{.}}{{/name}}</span>
+            {{/existing}}
+        </div>
+    </div>
+    {{/existing.length}}
+    {{#pending.length}}
+    <div class="form-group mt-3">
+        <label>{{#str}}subtitle:modal:pending, mod_videolesson{{/str}}</label>
+        <div class="pending-subtitles">
+            {{#pending}}
+            <span class="badge badge-warning mr-1 mb-1">{{#name}}{{name}}{{/name}}{{^name}}{{.}}{{/name}}</span>
+            {{/pending}}
+        </div>
+    </div>
+    {{/pending.length}}
+    {{#processing.length}}
+    <div class="form-group mt-3">
+        <label>{{#str}}subtitle:modal:processing, mod_videolesson{{/str}}</label>
+        <div class="processing-subtitles">
+            {{#processing}}
+            <span class="badge badge-info mr-1 mb-1">
+                {{#name}}{{name}}{{/name}}{{^name}}{{.}}{{/name}} <i class="icon fa fa-spinner fa-spin" aria-hidden="true"></i>
+            </span>
+            {{/processing}}
+        </div>
+    </div>
+    {{/processing.length}}
+    {{#failed.length}}
+    <div class="form-group mt-3">
+        <label>{{#str}}subtitle:modal:failed, mod_videolesson{{/str}}</label>
+        <div class="failed-subtitles">
+            {{#failed}}
+            <span class="badge badge-danger mr-1 mb-1">{{#name}}{{name}}{{/name}}{{^name}}{{.}}{{/name}}</span>
+            {{/failed}}
+        </div>
+    </div>
+    {{/failed.length}}
+    {{#canSelectMore}}
+    <div class="form-group mt-2">
+        <small class="form-text text-muted">{{#str}}subtitle:modal:remaining, mod_videolesson,  {{maxSelectable}}{{/str}}</small>
+    </div>
+    {{/canSelectMore}}
+</div>
+

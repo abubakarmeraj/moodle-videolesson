@@ -1,0 +1,51 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_videolesson/setup_wizard_step3
+
+    Setup wizard step 3: activation complete summary.
+}}
+
+<div class="setup-step-3 mt-4">
+    <div class="text-center mb-4">
+        <div class="success-icon mb-3">
+            <i class="fa fa-check-circle" style="font-size: 80px; color: #28a745;"></i>
+        </div>
+        <h3 class="text-success">{{#str}}setup:step3:complete:title, mod_videolesson{{/str}}</h3>
+        <p class="text-muted">{{#str}}setup:step3:complete:description, mod_videolesson{{/str}}</p>
+    </div>
+
+    <div class="documentation-section mt-4">
+        <h5>{{#str}}setup:step3:documentation:title, mod_videolesson{{/str}}</h5>
+        <div class="list-group">
+            <a href="https://www.mooplugins.com/docs/uploading-videos-to-the-video-library/" class="list-group-item list-group-item-action" target="_blank">
+                <i class="fa fa-upload"></i> {{#str}}setup:step3:documentation:uploading, mod_videolesson{{/str}}
+            </a>
+            <a href="https://www.mooplugins.com/docs/creating-a-video-lesson-activity/" class="list-group-item list-group-item-action" target="_blank">
+                <i class="fa fa-plus-circle"></i> {{#str}}setup:step3:documentation:creating, mod_videolesson{{/str}}
+            </a>
+        </div>
+    </div>
+
+    <div class="setup-actions mt-4">
+        <div class="text-center w-100">
+            <a href="{{wwwroot}}/mod/videolesson/library.php" class="btn btn-primary btn-lg">
+                <i class="fa fa-video"></i> {{#str}}setup:step3:gotolibrary, mod_videolesson{{/str}}
+            </a>
+        </div>
+    </div>
+</div>

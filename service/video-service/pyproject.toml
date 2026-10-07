@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+[project]
+name = "codefortex-video-service"
+version = "0.5.0rc1"
+description = "Self-hosted private video processing service for Moodle Video Lesson"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+# PEP 440 normalized spelling of runtime VERSION 0.5.0-rc1.
+# Runtime installation remains requirements.txt + hash-locked dependencies.

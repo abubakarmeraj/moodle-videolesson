@@ -1,0 +1,38 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_videolesson/manage_filterbar
+
+    Filter controls for the library manage page.
+}}
+
+<div class="mt-2 d-flex" id="filter-bar-manage">
+    <div class="mr-auto pr-2 pl-0 py-2">
+        <a href="{{{uploadpageurl}}}" id="" class="btn btn-primary">{{#pix}} i/upload, core {{/pix}}{{#str}}manage:upload, mod_videolesson{{/str}}</a>
+    </div>
+
+    <form class="form-inline m-0 videolesson-filter-form" name="filter-videos" method="post" action="{{action}}">
+        <label class="sr-only" for="filter-search-keyword">{{#str}}manage:filter:upload, mod_videolesson{{/str}}</label>
+        <div class="input-group">
+            <input type="text" name="_text" class="form-control" id="filter-search-keyword" placeholder="{{#str}}manage:filter:upload, mod_videolesson{{/str}}" value="{{text}}">
+        </div>
+        <button type="submit" name="_action" value="search" class="btn btn-primary m-1">{{#str}}manage:filter:search, mod_videolesson{{/str}}</button>
+        {{#filtered}}
+        <button type="submit" name="_action" value="reset" class="btn btn-light border-dark m-1">{{#str}}manage:filter:reset, mod_videolesson{{/str}}</button>
+        {{/filtered}}
+    </form>
+</div>

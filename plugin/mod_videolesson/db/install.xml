@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="mod/videolesson/db" VERSION="20260906" COMMENT="XMLDB file for Moodle mod_videolesson"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="videolesson" COMMENT="Stores the videolesson activity module instances.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="ID of the course this activity is part of."/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="The name of the activity module instance"/>
+        <FIELD NAME="source" TYPE="char" LENGTH="40" NOTNULL="true" SEQUENCE="false" COMMENT="Source type"/>
+        <FIELD NAME="sourcedata" TYPE="char" LENGTH="1333" NOTNULL="false" SEQUENCE="false" COMMENT="Source data"/>
+        <FIELD NAME="options" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="options"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Timestamp of when the instance was added to the course."/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Timestamp of when the instance was last modified."/>
+        <FIELD NAME="intro" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Activity description."/>
+        <FIELD NAME="introformat" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The format of the intro field."/>
+        <FIELD NAME="completionprogress" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+
+        <FIELD NAME="videouuid" TYPE="char" LENGTH="36" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="tenantid" TYPE="char" LENGTH="64" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="mediarevision" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="1" SEQUENCE="false"/>
+        <FIELD NAME="mediakind" TYPE="char" LENGTH="10" NOTNULL="true" DEFAULT="direct" SEQUENCE="false"/>
+        <FIELD NAME="trustedref" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Local authorization of reference; never trusted from backup input"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="fk_course" TYPE="foreign" FIELDS="course" REFTABLE="course" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="videolesson_data" COMMENT="Contains data about Moodle multimedia files">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="contenthash" TYPE="char" LENGTH="40" NOTNULL="true" SEQUENCE="false" COMMENT="Moodle contenthash of the file"/>
+        <FIELD NAME="duration" TYPE="number" LENGTH="10" NOTNULL="true" SEQUENCE="false" DECIMALS="3" COMMENT="The duration of the file"/>
+        <FIELD NAME="bitrate" TYPE="int" LENGTH="20" NOTNULL="true" SEQUENCE="false" COMMENT="Total bitrate of the file"/>
+        <FIELD NAME="size" TYPE="int" LENGTH="20" NOTNULL="true" SEQUENCE="false" COMMENT="Total size of the file in bytes"/>
+        <FIELD NAME="videostreams" TYPE="int" LENGTH="3" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Number of video streams in file"/>
+        <FIELD NAME="audiostreams" TYPE="int" LENGTH="3" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Number of audio streams in file"/>
+        <FIELD NAME="width" TYPE="int" LENGTH="6" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Width of primary video stream if it exists"/>
+        <FIELD NAME="height" TYPE="int" LENGTH="6" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Height of primary video stream if it exists"/>
+        <FIELD NAME="metadata" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="Full extracted metadata in json format"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The time the original Moodle file object was created"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="contenthash" TYPE="unique" FIELDS="contenthash"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="videolesson_data_external" COMMENT="Contains data about external multimedia sources (YouTube, Vimeo, direct URLs)">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="sourcehash" TYPE="char" LENGTH="40" NOTNULL="true" SEQUENCE="false" COMMENT="MD5 hash for unique identification (backward compatibility)"/>
+        <FIELD NAME="externaltype" TYPE="char" LENGTH="20" NOTNULL="false" SEQUENCE="false" COMMENT="Type: youtube, vimeo, direct_url, or NULL for unknown"/>
+        <FIELD NAME="externalvideoid" TYPE="char" LENGTH="100" NOTNULL="false" SEQUENCE="false" COMMENT="Video ID for YouTube/Vimeo (e.g., 'dQw4w9WgXcQ')"/>
+        <FIELD NAME="sourceurl" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="Original source URL for direct URLs (e.g., https://example.com/video.mp4)"/>
+        <FIELD NAME="duration" TYPE="number" LENGTH="10" NOTNULL="true" SEQUENCE="false" DECIMALS="3" COMMENT="The duration of the file"/>
+        <FIELD NAME="metadata" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Full extracted metadata in json format"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Timestamp when record was created"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Timestamp when record was last modified"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="sourcehash" TYPE="unique" FIELDS="sourcehash"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="externaltype_videoid" UNIQUE="false" FIELDS="externaltype, externalvideoid"/>
+        <INDEX NAME="sourceurl" UNIQUE="false" FIELDS="sourceurl"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="videolesson_conv" COMMENT="XMLDB file for Moodle mod/videolesson to track media conversions.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="contenthash" TYPE="char" LENGTH="40" NOTNULL="true" SEQUENCE="false" COMMENT="Moodle contenthash of the file"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="The name of the activity module instance"/>
+        <FIELD NAME="uploaded" TYPE="int" LENGTH="3" NOTNULL="true" DEFAULT="202" SEQUENCE="false" COMMENT="The processing status of the record."/>
+        <FIELD NAME="input_deleted" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The processing status of the record."/>
+        <FIELD NAME="status" TYPE="int" LENGTH="3" NOTNULL="true" DEFAULT="202" SEQUENCE="false" COMMENT="The processing status of the record."/>
+        <FIELD NAME="transcoder_status" TYPE="int" LENGTH="3" NOTNULL="true" DEFAULT="202" SEQUENCE="false" COMMENT="status of the elastic transcoder process"/>
+        <FIELD NAME="mediaconvert" TYPE="int" LENGTH="3" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="1 if mediaconvert used 0 for old elastictranscoder"/>
+        <FIELD NAME="hasmp4" TYPE="int" LENGTH="3" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="if its transcoded with a mp4 output"/>
+        <FIELD NAME="subtitle" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="subtitles"/>
+        <FIELD NAME="bucket_size" TYPE="char" LENGTH="40" NOTNULL="true" SEQUENCE="false" COMMENT="S3 output bucket size"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Unix timestamp of when the record was created"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Unix timestamp of when record was last modified"/>
+        <FIELD NAME="timecompleted" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="Unix timestamp of when record processing was completed"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="contenthash" TYPE="foreign-unique" FIELDS="contenthash" REFTABLE="videolesson_data" REFFIELDS="contenthash"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="videolesson_logs" COMMENT="Stores the videolesson activity logs">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="type" TYPE="char" LENGTH="40" NOTNULL="true" SEQUENCE="false" COMMENT="log type"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="The name of the activity module instance"/>
+        <FIELD NAME="other" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="senttoadmin" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Timestamp of when the instance was added to the course."/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Timestamp of when the instance was added to the course."/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Timestamp of when the instance was last modified."/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="videolesson_usage" COMMENT="Stores the videolesson activity module instances.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="userid" TYPE="char" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="User ID"/>
+        <FIELD NAME="cm" TYPE="char" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Course module ID"/>
+        <FIELD NAME="session" TYPE="char" LENGTH="40" NOTNULL="true" SEQUENCE="false" COMMENT="Session"/>
+        <FIELD NAME="source" TYPE="char" LENGTH="40" NOTNULL="true" SEQUENCE="false" COMMENT="Source type"/>
+        <FIELD NAME="sourcedata" TYPE="char" LENGTH="1333" NOTNULL="true" SEQUENCE="false" COMMENT="Source data contenthash, video id"/>
+        <FIELD NAME="watchduration" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Total user watch duration"/>
+        <FIELD NAME="ip" TYPE="char" LENGTH="45" NOTNULL="true" SEQUENCE="false" COMMENT="The name of the activity module instance"/>
+        <FIELD NAME="platform" TYPE="char" LENGTH="40" NOTNULL="true" SEQUENCE="false" COMMENT="Platform used"/>
+        <FIELD NAME="browser" TYPE="char" LENGTH="40" NOTNULL="true" SEQUENCE="false" COMMENT="Browser used"/>
+        <FIELD NAME="os" TYPE="char" LENGTH="40" NOTNULL="true" SEQUENCE="false" COMMENT="Operating System"/>
+        <FIELD NAME="city" TYPE="char" LENGTH="120" NOTNULL="true" SEQUENCE="false" COMMENT="User city"/>
+        <FIELD NAME="country" TYPE="char" LENGTH="40" NOTNULL="true" SEQUENCE="false" COMMENT="User country"/>
+        <FIELD NAME="timestamp" TYPE="char" LENGTH="40" NOTNULL="true" SEQUENCE="false" COMMENT="Timestamp when the player was loaded"/>
+        <FIELD NAME="data" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Timestamp of when the instance was added to the course."/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Timestamp of when the instance was last modified."/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="videolesson_cm_progress" COMMENT="Stores the user progress so that no need to calculate everytime">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="cmid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Course module ID"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="User ID"/>
+        <FIELD NAME="progress" TYPE="char" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Total progress"/>
+        <FIELD NAME="sourcedata" TYPE="char" LENGTH="1333" NOTNULL="true" SEQUENCE="false" COMMENT="Sourcedata"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Timestamp of when the progress was added."/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Timestamp of when the progress was last modified."/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="videolesson_folders" COMMENT="Stores folder hierarchy for organizing videos">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="Folder name"/>
+        <FIELD NAME="parent" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="Parent folder ID. NULL or 0 for root folders"/>
+        <FIELD NAME="depth" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Depth level in hierarchy (0 for root, 1 for first level, etc.)"/>
+        <FIELD NAME="path" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="Path string like /1/2/3/ for efficient tree queries"/>
+        <FIELD NAME="sortorder" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Sort order within parent folder"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Timestamp of when the folder was created"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Timestamp of when the folder was last modified"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="fk_vawsfolder_parent" TYPE="foreign" FIELDS="parent" REFTABLE="videolesson_folders" REFFIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="path" UNIQUE="false" FIELDS="path"/>
+        <INDEX NAME="parent_sortorder" UNIQUE="false" FIELDS="parent, sortorder"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="videolesson_folder_items" COMMENT="Links videos to folders for organization">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="folderid" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="Folder ID. NULL means video is not in any folder"/>
+        <FIELD NAME="videolessonid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Reference to videolesson_conv table"/>
+        <FIELD NAME="sortorder" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Sort order within folder"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Timestamp of when the item was added to folder"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Timestamp of when the item was last modified"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="fk_folder" TYPE="foreign" FIELDS="folderid" REFTABLE="videolesson_folders" REFFIELDS="id"/>
+        <KEY NAME="fk_videolesson" TYPE="foreign" FIELDS="videolessonid" REFTABLE="videolesson_conv" REFFIELDS="id"/>
+        <KEY NAME="videolessonid_unique" TYPE="unique" FIELDS="videolessonid"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="folderid_sortorder" UNIQUE="false" FIELDS="folderid, sortorder"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="videolesson_subtitles" COMMENT="Tracks subtitle generation requests and status">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="contenthash" TYPE="char" LENGTH="40" NOTNULL="true" SEQUENCE="false" COMMENT="Moodle contenthash of the video"/>
+        <FIELD NAME="language_code" TYPE="char" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Language code (e.g., 'en', 'original')"/>
+        <FIELD NAME="status" TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="pending" SEQUENCE="false" COMMENT="pending, processing, completed, failed"/>
+        <FIELD NAME="requested_at" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="When request was sent to SNS"/>
+        <FIELD NAME="completed_at" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="When subtitle was completed"/>
+        <FIELD NAME="error_message" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Error message if failed"/>
+        <FIELD NAME="retry_count" TYPE="int" LENGTH="3" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Number of retry attempts"/>
+        <FIELD NAME="sns_message_id" TYPE="char" LENGTH="100" NOTNULL="false" SEQUENCE="false" COMMENT="SNS message ID for tracking"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="contenthash_lang" TYPE="unique" FIELDS="contenthash, language_code"/>
+        <KEY NAME="fk_subtitle_contenthash" TYPE="foreign" FIELDS="contenthash" REFTABLE="videolesson_data" REFFIELDS="contenthash"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="status" UNIQUE="false" FIELDS="status"/>
+        <INDEX NAME="requested_at" UNIQUE="false" FIELDS="requested_at"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="videolesson_session" COMMENT="CodeFortex validated playback data">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="cmid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="videouuid" TYPE="char" LENGTH="36" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="revision" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="tokenhash" TYPE="char" LENGTH="64" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="duration" TYPE="number" LENGTH="12" NOTNULL="true" SEQUENCE="false" DECIMALS="3"/>
+        <FIELD NAME="lastseq" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" DEFAULT="0"/>
+        <FIELD NAME="credited" TYPE="number" LENGTH="12" NOTNULL="true" SEQUENCE="false" DEFAULT="0" DECIMALS="3"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="lasttime" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="expires" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS><KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+<KEY NAME="token" TYPE="unique" FIELDS="tokenhash"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="videolesson_progress" COMMENT="CodeFortex validated playback data">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="cmid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="videouuid" TYPE="char" LENGTH="36" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="revision" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="ranges" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="seconds" TYPE="number" LENGTH="12" NOTNULL="true" SEQUENCE="false" DEFAULT="0" DECIMALS="3"/>
+        <FIELD NAME="duration" TYPE="number" LENGTH="12" NOTNULL="true" SEQUENCE="false" DECIMALS="3"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS><KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+<KEY NAME="useractivitymedia" TYPE="unique" FIELDS="cmid, userid, videouuid, revision"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="videolesson_intent" COMMENT="Durable CodeFortex creation outbox; retained across ambiguous provider replies">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="purpose" TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="create" SEQUENCE="false"/>
+        <FIELD NAME="baseuuid" TYPE="char" LENGTH="36" NOTNULL="true" DEFAULT="none" SEQUENCE="false"/>
+        <FIELD NAME="baserevision" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="operationkey" TYPE="char" LENGTH="64" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="instanceid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="tenantid" TYPE="char" LENGTH="64" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="kind" TYPE="char" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="state" TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="pending" SEQUENCE="false"/>
+        <FIELD NAME="videouuid" TYPE="char" LENGTH="36" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="attempts" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="nextattempt" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS><KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="operation" TYPE="unique" FIELDS="operationkey"/>
+      </KEYS>
+      <INDEXES><INDEX NAME="due" UNIQUE="false" FIELDS="state, nextattempt"/></INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>

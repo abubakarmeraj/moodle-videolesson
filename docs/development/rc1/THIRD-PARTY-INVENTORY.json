@@ -1,0 +1,1027 @@
+{
+  "bundles": [
+    {
+      "exact_match": true,
+      "known_normalized_match": true,
+      "local_sha256": "ae7266d9eb50c1614c4f425edba8b3aa805b8b22c97cbbd360ae9a0ea47c02ad",
+      "upstream_sha256": "ae7266d9eb50c1614c4f425edba8b3aa805b8b22c97cbbd360ae9a0ea47c02ad",
+      "local_size": 113187,
+      "upstream_size": 113187,
+      "path": "plugin/mod_videolesson/resources/plyr/plyr.min.js",
+      "upstream_file": "dist/plyr.min.js"
+    },
+    {
+      "exact_match": true,
+      "known_normalized_match": true,
+      "local_sha256": "b0fc604958d3c5d9b393c4a4e48f77e232ab9928ee1a585a0e87e97984b5b024",
+      "upstream_sha256": "b0fc604958d3c5d9b393c4a4e48f77e232ab9928ee1a585a0e87e97984b5b024",
+      "local_size": 119969,
+      "upstream_size": 119969,
+      "path": "plugin/mod_videolesson/resources/plyr/plyr.polyfilled.min.js",
+      "upstream_file": "dist/plyr.polyfilled.min.js"
+    },
+    {
+      "exact_match": true,
+      "known_normalized_match": true,
+      "local_sha256": "2ee720801746a99015c74144707638048778223b2520c8228b627f7262fb122b",
+      "upstream_sha256": "2ee720801746a99015c74144707638048778223b2520c8228b627f7262fb122b",
+      "local_size": 32564,
+      "upstream_size": 32564,
+      "path": "plugin/mod_videolesson/resources/plyr/plyr.css",
+      "upstream_file": "dist/plyr.css"
+    },
+    {
+      "exact_match": true,
+      "known_normalized_match": true,
+      "local_sha256": "e65013dc3435b55a34b5257a7e65835926c1f4d57209dba89a810d3505f4f143",
+      "upstream_sha256": "e65013dc3435b55a34b5257a7e65835926c1f4d57209dba89a810d3505f4f143",
+      "local_size": 524014,
+      "upstream_size": 524014,
+      "path": "plugin/mod_videolesson/resources/hls.min.js",
+      "upstream_file": "dist/hls.min.js"
+    }
+  ],
+  "sources": [
+    {
+      "package": "plyr",
+      "version": "3.7.8",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sampotts/plyr.git"
+      },
+      "archive_sha256": "570ade6ea1a58dbe8c248cf5c2b475b30276daef1ae9aac845fa50f9c16d1aa3",
+      "dependencies": {
+        "core-js": "^3.26.1",
+        "custom-event-polyfill": "^1.0.7",
+        "loadjs": "^4.2.0",
+        "rangetouch": "^2.0.1",
+        "url-polyfill": "^1.1.12"
+      }
+    },
+    {
+      "package": "hls.js",
+      "version": "1.6.2",
+      "license": "Apache-2.0",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/video-dev/hls.js"
+      },
+      "archive_sha256": "4d68a8a7f05ce89953559cbbef83f57d293a757659bb2e78b29368d49a0ba40d",
+      "dependencies": {}
+    }
+  ],
+  "mapped_dependencies": {
+    "plyr": [
+      "loadjs",
+      "rangetouch"
+    ],
+    "plyr-polyfilled": [
+      "custom-event-polyfill",
+      "loadjs",
+      "rangetouch",
+      "url-polyfill"
+    ],
+    "hls.js": [
+      "@svta/common-media-library",
+      "eventemitter3",
+      "url-toolkit"
+    ]
+  },
+  "transitive": [
+    {
+      "package": "core-js",
+      "version": "3.26.1",
+      "license": "MIT",
+      "author": {
+        "name": "Denis Pushkarev",
+        "email": "zloirock@zloirock.ru",
+        "url": "http://zloirock.ru"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/zloirock/core-js.git",
+        "directory": "packages/core-js"
+      },
+      "archive_sha256": "16a9c7733f5e2a215f6177e82961367de2aedd1736cbff1d5836629eb1327fbb",
+      "licenses": [
+        {
+          "name": "LICENSE",
+          "sha256": "e1dad265f157187a8b0290f57b3c6807d94c322ffbcdf75ab82b638eb52b1789"
+        }
+      ],
+      "mapped_matches": [],
+      "bundled_in_runtime": false,
+      "modified_in_os3_local": false,
+      "redistribution": "per upstream license, retaining complete copyright/license and NOTICE where provided",
+      "retained_notices": []
+    },
+    {
+      "package": "custom-event-polyfill",
+      "version": "1.0.7",
+      "license": "MIT",
+      "author": "Evan Krambuhl <thekrambuhl@gmail.com>",
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:kumarharsh/custom-event-polyfill.git"
+      },
+      "archive_sha256": "3ee72528797db1b865497397183eefe8b8b3745a30a9369efd23e5585e3e39af",
+      "licenses": [
+        {
+          "name": "LICENSE",
+          "sha256": "b44cf85f7a490ef644dc4ebf1decefd7119c3a9ae8eeec4cb0f134c8c9919d38"
+        }
+      ],
+      "mapped_matches": [
+        {
+          "bundle": "plyr-polyfilled",
+          "source": "polyfill.js",
+          "match": true
+        }
+      ],
+      "bundled_in_runtime": true,
+      "modified_in_os3_local": false,
+      "redistribution": "per upstream license, retaining complete copyright/license and NOTICE where provided",
+      "retained_notices": [
+        "docs/licenses/javascript/custom-event-polyfill/LICENSE"
+      ]
+    },
+    {
+      "package": "eventemitter3",
+      "version": "5.0.1",
+      "license": "MIT",
+      "author": "Arnout Kazemier",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/primus/eventemitter3.git"
+      },
+      "archive_sha256": "3188d3a05772c99cf0ccf44f6cd8530bcbaf02ce0addcc47c33f26daff0f952c",
+      "licenses": [
+        {
+          "name": "LICENSE",
+          "sha256": "3aecc12b1cb28832b5f65ab64291de96568c3f236a74d646281b4491f7bcadbf"
+        }
+      ],
+      "mapped_matches": [
+        {
+          "bundle": "hls.js",
+          "source": "index.js",
+          "match": true
+        }
+      ],
+      "bundled_in_runtime": true,
+      "modified_in_os3_local": false,
+      "redistribution": "per upstream license, retaining complete copyright/license and NOTICE where provided",
+      "retained_notices": [
+        "docs/licenses/javascript/eventemitter3/LICENSE"
+      ]
+    },
+    {
+      "package": "loadjs",
+      "version": "4.2.0",
+      "license": "MIT",
+      "author": null,
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/muicss/loadjs.git"
+      },
+      "archive_sha256": "ff95326f96c396499cc4141370a9ecc69f3cafbc48a50a7104b77a7e934d7e77",
+      "licenses": [
+        {
+          "name": "AUTHORS.txt",
+          "sha256": "017448027a23d0b2d5e73c1734e7b2f48bcdeccfd137d608636f08149b1d9a91"
+        },
+        {
+          "name": "LICENSE.txt",
+          "sha256": "9b7ad2c922bb096e21bec159105929da2f81a2a846e4f0e558b2c4235b9a5f85"
+        }
+      ],
+      "mapped_matches": [
+        {
+          "bundle": "plyr",
+          "source": "dist/loadjs.umd.js",
+          "match": true
+        },
+        {
+          "bundle": "plyr-polyfilled",
+          "source": "dist/loadjs.umd.js",
+          "match": true
+        }
+      ],
+      "bundled_in_runtime": true,
+      "modified_in_os3_local": false,
+      "redistribution": "per upstream license, retaining complete copyright/license and NOTICE where provided",
+      "retained_notices": [
+        "docs/licenses/javascript/loadjs/AUTHORS.txt",
+        "docs/licenses/javascript/loadjs/LICENSE.txt"
+      ]
+    },
+    {
+      "package": "rangetouch",
+      "version": "2.0.1",
+      "license": "MIT",
+      "author": "Sam Potts <sam@potts.es>",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sampotts/rangetouch.git"
+      },
+      "archive_sha256": "1c030551874830b65c6aa48274fb27f0b8f280d4eb9a5e0fb5acff3890ed6f05",
+      "licenses": [
+        {
+          "name": "license.md",
+          "sha256": "313d697522b0207d171951e8cedb59d53245d4bdc19fc67abc86803678a372f8"
+        }
+      ],
+      "mapped_matches": [
+        {
+          "bundle": "plyr",
+          "source": "dist/rangetouch.mjs",
+          "match": true
+        },
+        {
+          "bundle": "plyr-polyfilled",
+          "source": "dist/rangetouch.mjs",
+          "match": true
+        }
+      ],
+      "bundled_in_runtime": true,
+      "modified_in_os3_local": false,
+      "redistribution": "per upstream license, retaining complete copyright/license and NOTICE where provided",
+      "retained_notices": [
+        "docs/licenses/javascript/rangetouch/license.md"
+      ]
+    },
+    {
+      "package": "@svta/common-media-library",
+      "version": "0.10.0",
+      "license": "Apache-2.0",
+      "author": null,
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/streaming-video-technology-alliance/common-media-library.git"
+      },
+      "archive_sha256": "0762f1388a67b2c0275e9ae17573d9a09899fe6ba6217dd6768148dab700dbd6",
+      "licenses": [
+        {
+          "name": "LICENSE",
+          "sha256": "95cdf13a152329c8a60cf739d442f578a172727f0584bff42406126719312f62"
+        },
+        {
+          "name": "NOTICE",
+          "sha256": "075ae70818a55ab1b7e6bdb6db2505e146d81671f7f35c25856e061aa84464b3"
+        }
+      ],
+      "mapped_matches": [
+        {
+          "bundle": "hls.js",
+          "source": "dist/cmcd/appendCmcdHeaders.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cmcd/appendCmcdQuery.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/utils/BARE_ITEM.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/utils/base64encode.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/utils/BOOLEAN.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/utils/BYTES.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/id3/canParseId3.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cmcd/CMCD_OBJECT.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cmcd/CMCD_PARAM.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cmcd/CMCD_REQUEST.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cmcd/CMCD_SESSION.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cmcd/CMCD_STATUS.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cmcd/CmcdFormatters.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cmcd/CmcdHeaderField.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cmcd/CmcdHeaderMap.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cmcd/CmcdObjectType.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cmcd/CmcdStreamingFormat.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cta/CmObjectType.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cta/CmStreamingFormat.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/utils/DECIMAL.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/id3/util/decodeId3Frame.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/id3/util/decodeId3ImageFrame.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/id3/util/decodeId3PrivFrame.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/id3/util/decodeId3TextFrame.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/id3/util/decodeId3UrlFrame.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/utils/DICT.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cmcd/encodeCmcd.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/encodeSfDict.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/id3/getId3Data.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/id3/util/getId3FrameData.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/id3/getId3Frames.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/id3/getId3Timestamp.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/utils/INTEGER.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/id3/util/isId3Footer.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/id3/util/isId3Header.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/id3/isId3TimestampFrame.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/utils/isInvalidInt.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cta/utils/isTokenField.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cta/utils/isValid.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/utils/KEY.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cmcd/utils/processCmcd.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/id3/util/readId3Size.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/id3/util/readId3Timestamp.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/utils/roundToEven.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/serialize/serializeBareItem.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/serialize/serializeBoolean.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/serialize/serializeByteSequence.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/serialize/serializeDate.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/serialize/serializeDecimal.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/serialize/serializeDict.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/serialize/serializeError.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/serialize/serializeInnerList.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/serialize/serializeInteger.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/serialize/serializeItem.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/serialize/serializeKey.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/serialize/serializeParams.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/serialize/serializeString.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/serialize/serializeToken.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/SfItem.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/SfToken.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/utils/STRING_REGEX.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/utils/STRING.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cta/utils/symbolToStr.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/utils/throwError.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/id3/util/toArrayBuffer.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cmcd/toCmcdHeaders.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/cmcd/toCmcdQuery.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/structuredfield/utils/TOKEN.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/utils/urlToRelativePath.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/id3/util/utf8.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/utils/utf8ArrayToStr.js",
+          "match": true
+        },
+        {
+          "bundle": "hls.js",
+          "source": "dist/utils/uuid.js",
+          "match": true
+        }
+      ],
+      "bundled_in_runtime": true,
+      "modified_in_os3_local": false,
+      "redistribution": "per upstream license, retaining complete copyright/license and NOTICE where provided",
+      "retained_notices": [
+        "docs/licenses/javascript/@svta-common-media-library/LICENSE",
+        "docs/licenses/javascript/@svta-common-media-library/NOTICE"
+      ]
+    },
+    {
+      "package": "url-polyfill",
+      "version": "1.1.12",
+      "license": "MIT",
+      "author": "valentin",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/lifaon74/url-polyfill"
+      },
+      "archive_sha256": "ae2e747c89abb858ec7f0aa0b1d90b06107ec9a779d74ea8a11a27e8c38c5546",
+      "licenses": [
+        {
+          "name": "LICENSE",
+          "sha256": "27cf99a40cc87055c1a533f3efc18cfde2c0262dbd632518ff8994e82a4d0b1b"
+        }
+      ],
+      "mapped_matches": [
+        {
+          "bundle": "plyr-polyfilled",
+          "source": "url-polyfill.js",
+          "match": true
+        }
+      ],
+      "bundled_in_runtime": true,
+      "modified_in_os3_local": false,
+      "redistribution": "per upstream license, retaining complete copyright/license and NOTICE where provided",
+      "retained_notices": [
+        "docs/licenses/javascript/url-polyfill/LICENSE"
+      ]
+    },
+    {
+      "package": "url-toolkit",
+      "version": "2.2.5",
+      "license": "Apache-2.0",
+      "author": "Tom Jenkinson <tjcode@outlook.com>",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tjenkinson/url-toolkit.git"
+      },
+      "archive_sha256": "88709aef71d9a9c2d2d4b42f3531181b101f35bdbdd76a295437c4eede36752e",
+      "licenses": [
+        {
+          "name": "LICENSE",
+          "sha256": "0fa4bd51fab4d066970c481917d77f222253ee82344caf07efd03801aa558dff"
+        }
+      ],
+      "mapped_matches": [
+        {
+          "bundle": "hls.js",
+          "source": "src/url-toolkit.js",
+          "match": true
+        }
+      ],
+      "bundled_in_runtime": true,
+      "modified_in_os3_local": false,
+      "redistribution": "per upstream license, retaining complete copyright/license and NOTICE where provided",
+      "retained_notices": [
+        "docs/licenses/javascript/url-toolkit/LICENSE"
+      ]
+    }
+  ],
+  "python": [
+    {
+      "package": "annotated-doc",
+      "version": "0.0.5",
+      "license": "MIT",
+      "notices": [
+        {
+          "file": "docs/licenses/python/annotated-doc/licenses/LICENSE",
+          "sha256": "fff170779a6acbf65abdb405c087f1cee1786691e4a96a4034517e4a504a0cdf"
+        }
+      ]
+    },
+    {
+      "package": "annotated-types",
+      "version": "0.8.0",
+      "license": "MIT",
+      "notices": [
+        {
+          "file": "docs/licenses/python/annotated-types/licenses/LICENSE",
+          "sha256": "fe1049884b1a0d9342901e88e07f32925d24b3121d9972b6a6805fb9824b095d"
+        }
+      ]
+    },
+    {
+      "package": "anyio",
+      "version": "4.15.1",
+      "license": "MIT",
+      "notices": [
+        {
+          "file": "docs/licenses/python/anyio/licenses/LICENSE",
+          "sha256": "5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0"
+        }
+      ]
+    },
+    {
+      "package": "boto3",
+      "version": "1.43.89",
+      "license": "Apache-2.0",
+      "notices": [
+        {
+          "file": "docs/licenses/python/boto3/LICENSE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "docs/licenses/python/boto3/NOTICE",
+          "sha256": "04fb1e61484a7810f1ba09bb42bc01ca58c9af33927d7c5a21556e4c4d1c7fa4"
+        }
+      ]
+    },
+    {
+      "package": "botocore",
+      "version": "1.43.89",
+      "license": "Apache-2.0",
+      "notices": [
+        {
+          "file": "docs/licenses/python/botocore/LICENSE.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "file": "docs/licenses/python/botocore/NOTICE",
+          "sha256": "1d1c5a6f3d68cb11f4fad1afa86a7450d0286f15c176ef0ea048f255b46d95b0"
+        }
+      ]
+    },
+    {
+      "package": "click",
+      "version": "8.5.0",
+      "license": "BSD-3-Clause",
+      "notices": [
+        {
+          "file": "docs/licenses/python/click/licenses/LICENSE.txt",
+          "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d"
+        }
+      ]
+    },
+    {
+      "package": "fastapi",
+      "version": "0.141.1",
+      "license": "MIT",
+      "notices": [
+        {
+          "file": "docs/licenses/python/fastapi/licenses/LICENSE",
+          "sha256": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e"
+        }
+      ]
+    },
+    {
+      "package": "h11",
+      "version": "0.16.0",
+      "license": "MIT",
+      "notices": [
+        {
+          "file": "docs/licenses/python/h11/licenses/LICENSE.txt",
+          "sha256": "37db5bb85926db28a427a25867f10b1232003aea1be69ccb851138adb8e6f361"
+        }
+      ]
+    },
+    {
+      "package": "idna",
+      "version": "3.19",
+      "license": "BSD-3-Clause",
+      "notices": [
+        {
+          "file": "docs/licenses/python/idna/licenses/LICENSE.md",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+        }
+      ]
+    },
+    {
+      "package": "jmespath",
+      "version": "1.1.0",
+      "license": "MIT",
+      "notices": [
+        {
+          "file": "docs/licenses/python/jmespath/LICENSE",
+          "sha256": "6eefacfa4d71b82d08408c751470ac8d9854538da2142cb27be0287fb13d0ab9"
+        }
+      ]
+    },
+    {
+      "package": "pydantic",
+      "version": "2.13.5",
+      "license": "MIT",
+      "notices": [
+        {
+          "file": "docs/licenses/python/pydantic/licenses/LICENSE",
+          "sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3"
+        }
+      ]
+    },
+    {
+      "package": "pydantic_core",
+      "version": "2.46.5",
+      "license": "MIT",
+      "notices": [
+        {
+          "file": "docs/licenses/python/pydantic_core/licenses/LICENSE",
+          "sha256": "2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a"
+        }
+      ]
+    },
+    {
+      "package": "PyMySQL",
+      "version": "1.2.0",
+      "license": "MIT",
+      "notices": [
+        {
+          "file": "docs/licenses/python/PyMySQL/licenses/LICENSE",
+          "sha256": "314120dc65f0800f738a4b31400c76ee14decd1fbe77ce9c3540a421b86ea7b6"
+        }
+      ]
+    },
+    {
+      "package": "python-dateutil",
+      "version": "2.9.0.post0",
+      "license": "Dual License",
+      "notices": [
+        {
+          "file": "docs/licenses/python/python-dateutil/LICENSE",
+          "sha256": "ba00f51a0d92823b5a1cde27d8b5b9d2321e67ed8da9bc163eff96d5e17e577e"
+        }
+      ]
+    },
+    {
+      "package": "redis",
+      "version": "8.1.0",
+      "license": "MIT",
+      "notices": [
+        {
+          "file": "docs/licenses/python/redis/licenses/LICENSE",
+          "sha256": "a57b250a5bf03d7afe55b74063313f2adb7b00d546c0ab149a89398333fe3cc8"
+        }
+      ]
+    },
+    {
+      "package": "s3transfer",
+      "version": "0.19.2",
+      "license": "Apache License 2.0",
+      "notices": [
+        {
+          "file": "docs/licenses/python/s3transfer/LICENSE.txt",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "file": "docs/licenses/python/s3transfer/NOTICE.txt",
+          "sha256": "d8354e0fa7fb762da7bc054a8a6774a0b310dfbbc78006393ee573a0e57612b5"
+        }
+      ]
+    },
+    {
+      "package": "six",
+      "version": "1.17.0",
+      "license": "MIT",
+      "notices": [
+        {
+          "file": "docs/licenses/python/six/LICENSE",
+          "sha256": "4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0"
+        }
+      ]
+    },
+    {
+      "package": "starlette",
+      "version": "1.6.0",
+      "license": "BSD-3-Clause",
+      "notices": [
+        {
+          "file": "docs/licenses/python/starlette/licenses/LICENSE.md",
+          "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf"
+        }
+      ]
+    },
+    {
+      "package": "typing_extensions",
+      "version": "4.16.0",
+      "license": "PSF-2.0",
+      "notices": [
+        {
+          "file": "docs/licenses/python/typing_extensions/licenses/LICENSE",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+        }
+      ]
+    },
+    {
+      "package": "typing-inspection",
+      "version": "0.4.4",
+      "license": "MIT",
+      "notices": [
+        {
+          "file": "docs/licenses/python/typing-inspection/licenses/LICENSE",
+          "sha256": "804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3"
+        }
+      ]
+    },
+    {
+      "package": "urllib3",
+      "version": "2.7.0",
+      "license": "MIT",
+      "notices": [
+        {
+          "file": "docs/licenses/python/urllib3/licenses/LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+        }
+      ]
+    },
+    {
+      "package": "uvicorn",
+      "version": "0.52.4",
+      "license": "BSD-3-Clause",
+      "notices": [
+        {
+          "file": "docs/licenses/python/uvicorn/licenses/LICENSE.md",
+          "sha256": "efe1acf3e62fb99c288b0ec73e5a773b7268ef4320fe757ea994214e4b63c371"
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "path": "plugin/mod_videolesson/pix/codefortex-controls.svg",
+      "sha256": "ba7cdcee8642808f0120605c96e41b5d8afb89b91a4f7dd6713af393510bb2b4",
+      "origin": "accepted original CodeFortex controls",
+      "author": "CodeFortex project",
+      "license": "GPL-3.0-or-later",
+      "redistribution": "owner-approved project grant",
+      "modified_in_os3_local": false,
+      "bundled": true,
+      "replaced_in_rc1": false
+    },
+    {
+      "path": "plugin/mod_videolesson/pix/monologo.png",
+      "sha256": "5d91fa1e272aa51b1fcc08c0aa512f7096f17dcce34158fadac56611a2c6fa61",
+      "origin": "new original project geometry",
+      "author": "CodeFortex project",
+      "license": "GPL-3.0-or-later",
+      "redistribution": "owner-approved project grant",
+      "modified_in_os3_local": false,
+      "bundled": true,
+      "replaced_in_rc1": true
+    },
+    {
+      "path": "plugin/mod_videolesson/pix/monologo.svg",
+      "sha256": "08c9478529486d4e1b9dd63740fe49eae7ce587dc443c5771609941f9c97fed3",
+      "origin": "new original project geometry",
+      "author": "CodeFortex project",
+      "license": "GPL-3.0-or-later",
+      "redistribution": "owner-approved project grant",
+      "modified_in_os3_local": false,
+      "bundled": true,
+      "replaced_in_rc1": true
+    },
+    {
+      "path": "plugin/mod_videolesson/pix/thumbnail.png",
+      "sha256": "1e41bb4ea38627849f4b8b1a6d1f0d158514f59e6fc11442cbd09784ea077ad6",
+      "origin": "new original project geometry",
+      "author": "CodeFortex project",
+      "license": "GPL-3.0-or-later",
+      "redistribution": "owner-approved project grant",
+      "modified_in_os3_local": false,
+      "bundled": true,
+      "replaced_in_rc1": true
+    },
+    {
+      "path": "plugin/mod_videolesson/pix/thumbnail.svg",
+      "sha256": "5e8bbfab29dc09fba5b56037110d4eaf7fea5067edc5389e0b7df045461b4216",
+      "origin": "new original PNG source design",
+      "author": "CodeFortex project",
+      "license": "GPL-3.0-or-later",
+      "bundled": true
+    }
+  ],
+  "plyr_min_css": {
+    "path": "plugin/mod_videolesson/resources/plyr/plyr.min.css",
+    "sha256": "6bfc1e307a874e08da7f2529dd89cca1e4a213d32cc06afaa1086ed85179d8b1",
+    "origin": "Plyr3.7.8 stylesheet; whitespace-only normalization matches verified plyr.css",
+    "license": "MIT",
+    "modified_in_os3_local": false,
+    "bundled": true
+  },
+  "private_testing_only": [
+    "MinIO; no binary/image redistributed"
+  ],
+  "project_license": "GPL-3.0-or-later; third-party grants retained"
+}

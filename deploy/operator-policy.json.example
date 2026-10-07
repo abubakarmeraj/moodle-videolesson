@@ -1,0 +1,18 @@
+{
+  "storage_backend": "s3-compatible",
+  "endpoint": "https://storage.example.invalid",
+  "storage_region": "us-east-1",
+  "storage_addressing_style": "path",
+  "raw_bucket": "videolesson-private-raw",
+  "processed_bucket": "videolesson-private-processed",
+  "moodle_origin": "https://moodle.example.invalid",
+  "service_origin": "https://video.example.invalid",
+  "gateway_origin": "https://media.example.invalid",
+  "allowed_hosts": "localhost,video.example.invalid,media.example.invalid",
+  "storage_files": {
+    "api": {"access": "/protected/storage/api-access", "secret": "/protected/storage/api-secret"},
+    "gateway": {"access": "/protected/storage/gateway-access", "secret": "/protected/storage/gateway-secret"},
+    "worker": {"access": "/protected/storage/worker-access", "secret": "/protected/storage/worker-secret"},
+    "janitor": {"access": "/protected/storage/janitor-access", "secret": "/protected/storage/janitor-secret"}
+  }
+}

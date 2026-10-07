@@ -1,0 +1,122 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_videolesson/table_videos
+
+    Searchable video picker table for activity settings and forms.
+}}
+
+<div class="{{#border}}border rounded{{/border}} p-2">
+    <input type="text" id="videolistsearchinput{{tableid}}" class="mb-2" style="border-radius: .5rem; padding: .375rem .75rem; border: 1px solid #8f959e;" placeholder="Search">
+    {{#uploadlink}}
+    <span style="float: right;"><a href="{{{ cfg.wwwroot }}}/mod/videolesson/library.php?action=upload" target="_blank">{{#str}}link:upload, mod_videolesson{{/str}}</a></span>
+    {{/uploadlink}}
+    {{#librarylink}}
+    <span style="float: right;"><a href="{{{ cfg.wwwroot }}}/mod/videolesson/library.php" target="_blank">{{#str}}link:library, mod_videolesson{{/str}}</a></span>
+    {{/librarylink}}
+    <div>
+        <table id="videolist{{tableid}}" class="display videolist" style="width:100%" data-selected="">
+            <thead>
+                <tr>
+                    <th data-sort-indicator="">{{#str}}form:gallery:col:folder, mod_videolesson{{/str}}</th>
+                    <th data-sort-indicator="">{{#str}}form:gallery:col:thumbnail, mod_videolesson{{/str}}</th>
+                    <th data-sort-indicator="">{{#str}}form:gallery:col:title, mod_videolesson{{/str}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#videos}}
+                <tr data-title="{{#shortentext}} 50, {{{name}}} {{/shortentext}}" data-contenthash="{{contenthash}}" class="{{#selected}}selected{{/selected}}">
+                    <td>{{#foldername}}{{foldername}}{{/foldername}}{{^foldername}}{{#str}}folder:uncategorized, mod_videolesson{{/str}}{{/foldername}}</td>
+                    {{#missing}}
+                    <td>{{#missing}}{{#pix}} i/missing, mod_videolesson, {{#str}}bucket:missing, mod_videolesson{{/str}} {{/pix}}{{/missing}} {{#str}}bucket:missing, mod_videolesson{{/str}}</td>
+                    {{/missing}}
+                    {{^missing}}
+                    <td>{{#thumbnail}}<img src="{{thumbnail}}" alt="Thumbnail" onerror="this.onerror=null; this.src='{{placeholder}}';" style="max-width: 120px; max-height: 80px; object-fit: cover;">{{/thumbnail}}</td>
+                    {{/missing}}
+                    <td>{{#shortentext}} 50, {{{name}}} {{/shortentext}}</td>
+                </tr>
+                {{/videos}}
+            </tbody>
+        </table>
+    </div>
+</div>
+<style>
+.videolist {
+    width: 100%;
+    border-collapse: collapse;
+}}
+
+.videolist th,
+.videolist td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.videolist tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.videolist tr {
+    line-height: 30px;
+    height: 30px;
+}
+
+.videolist .selected {
+    background-color: #3f6ab2;
+    color: #fff;
+}
+
+.videolist .selected:hover {
+    color: #000;
+    background-color: #3f6ab2;
+}
+
+.videolist th[data-sort-indicator]::after {
+    content: attr(data-sort-indicator);
+    margin-left: 8px;
+    font-size: 12px;
+    color: #666;
+}
+
+.videolist .transcodingstatus {
+    float: right;
+}
+
+.videolist tbody {
+        display: block;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+.videolist thead, .videolist tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.videolist thead {
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.videolist thead th{
+    border: 0;
+}
+</style>

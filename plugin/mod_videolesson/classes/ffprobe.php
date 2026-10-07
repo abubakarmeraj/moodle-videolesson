@@ -1,0 +1,210 @@
+<?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * ffprobe
+ *
+ * @package    mod_videolesson
+ * @author     BitKea Technologies LLP
+ * @copyright  2022-2026 BitKea Technologies LLP
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+namespace mod_videolesson;
+
+/**
+ * ffprobe class.
+ *
+ * @package    mod_videolesson
+ * @author     BitKea Technologies LLP
+ * @copyright  2022-2026 BitKea Technologies LLP
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class ffprobe {
+    /** @var string The path to the FFProbe executable. */
+    private $ffprobepath;
+
+    /**
+     * Constructor for the ffprobe class.
+     * @param bool $throwexception Throw an exception if the FFProbe path is not valid.
+     */
+    public function __construct($throwexception = true) {
+        $this->ffprobepath = get_config('mod_videolesson', 'pathtoffprobe');
+        if ($throwexception && !$this->is_valid_path()) {
+            throw new \moodle_exception('ffprobe:invalidpath', 'mod_videolesson', '');
+        }
+    }
+
+    /**
+     * Check if the FFProbe path is valid.
+     * @return bool True if the FFProbe path is valid, false otherwise.
+     */
+    public function is_valid_path(): bool {
+        return file_exists($this->ffprobepath) && !is_dir($this->ffprobepath) && file_is_executable($this->ffprobepath);
+    }
+
+    /**
+     * Given the results from an FFProbe inspection extpract
+     * relevant media data.
+     *
+     * @param array $resultobject Array of raw JSON from FFProbe.
+     * @return array $metadata The metadata array with extracted media file data.
+     */
+    private function decode_ffprobe_json($resultobject): array {
+        $metadata = [
+            'status' => 'success',
+            'reason' => 'FFProbe inspection succeeded',
+            'data' => [],
+        ];
+
+        // Format data.
+        $formatname =
+            !empty($resultobject->format->format_name) ? $resultobject->format->format_name : 0; // Eg. "mov,mp4,m4a,3gp,3g2,mj2".
+        $formatlingname =
+            !empty($resultobject->format->format_long_name) ? $resultobject->format->format_long_name : 0; // Eg. "QuickTime / MOV".
+        $duration =
+            !empty($resultobject->format->duration) ? $resultobject->format->duration : 0; // Eg. "5.312".
+        $bitrate =
+            !empty($resultobject->format->bit_rate) ? $resultobject->format->bit_rate : 0; // Eg. "1589963".
+        $size =
+            !empty($resultobject->format->size) ? $resultobject->format->size : 0; // Eg. "5253880".
+        $probescore =
+            !empty($resultobject->format->probe_score) ? $resultobject->format->probe_score : 0; // Eg. "100".
+
+        // Stream data.
+        // Files can have multiple streams, not just one audo and one video.
+        $totalstreams = count($resultobject->streams);
+        $totalvideostreams = 0;
+        $totalaudiostreams = 0;
+        $metadata['data']['videostreams'] = [];
+        $metadata['data']['audiostreams'] = [];
+        $colorspaces = [];
+        // Grab data from the available streams.
+        foreach ($resultobject->streams as $stream) {
+            if ($stream->codec_type == 'video') {
+                $totalvideostreams++;
+                $metadata['data']['videostreams'][] = [
+                    'codecname' => !empty($stream->codec_name) ? $stream->codec_name : 0,
+                    'width' => !empty($stream->width) ? $stream->width : 0,
+                    'height' => !empty($stream->height) ? $stream->height : 0,
+                    'aspectratio' => !empty($stream->display_aspect_ratio) ? $stream->display_aspect_ratio : 0,
+                    'framerate' => !empty($stream->avg_frame_rate) ? $stream->avg_frame_rate : 0,
+                    'bitrate' => !empty($stream->bit_rate) ? $stream->bit_rate : 0,
+                ];
+                $colorspaces[] = $stream->color_space;
+            }
+
+            if ($stream->codec_type == 'audio') {
+                $metadata['data']['audiostreams'][] = [
+                    'codecname' => !empty($stream->codec_name) ? $stream->codec_name : 0,
+                    'samplerate' => !empty($stream->sample_rate) ? $stream->sample_rate : 0,
+                    'channels' => !empty($stream->channels) ? $stream->channels : 0,
+                    'bitrate' => !empty($stream->bit_rate) ? $stream->bit_rate : 0,
+                ];
+
+                if ($stream->codec_name && $stream->sample_rate && $stream->channels && $stream->channels) {
+                    $totalaudiostreams++;
+                }
+            }
+        }
+
+        // Populate general data.
+        $metadata['data']['formatname'] = $formatname;
+        $metadata['data']['formatlingname'] = $formatlingname;
+        $metadata['data']['duration'] = $duration;
+        $metadata['data']['bitrate'] = $bitrate;
+        $metadata['data']['size'] = $size;
+        $metadata['data']['probescore'] = $probescore;
+        $metadata['data']['totalstreams'] = $totalstreams;
+        $metadata['data']['totalvideostreams'] = $totalvideostreams;
+        $metadata['data']['totalaudiostreams'] = $totalaudiostreams;
+        $metadata['data']['color_space'] = $colorspaces;
+        return $metadata;
+    }
+
+    /**
+     * Given a Moodle stored file object, get the file metadata using FFProbe.
+     * @param \stored_file $file Moodle stored file object.
+     * @return array $metadata The metadata retrieved from the file.
+     */
+    public function get_media_metadata(\stored_file $file): array {
+        $metadata = [
+            'status' => 'failed',
+            'reason' => 'FFProbe inspection failed',
+            'data' => [],
+        ];
+        $rawresults = null;
+        $jsonresults = null;
+
+        // We need to make an explicit temp file on the filesystem as
+        // ffprobe will not take a stream or a file object.
+        // This is not ideal when dealing with massive files or object storage,
+        // but there isn't anything that can be done about it.
+
+        // Write the file contents into a local tempfile not a moodle tempfile.
+        $tempfile = tmpfile();
+        $path = stream_get_meta_data($tempfile)['uri'];
+        if (!$file->copy_content_to($path)) {
+            $metadata['reason'] = 'file does not exist';
+            return $metadata;
+        }
+
+        // Execute the FFProbe command to get file metadata.
+        $command = $this->ffprobepath . ' -of json -v error -show_format -show_streams ' .  escapeshellarg($path);
+        $errfile = $path . "_err";
+        // Send stderr to the err file to retrieve seperate from stdout.
+        $rawresults = shell_exec("$command 2>$errfile");
+        fclose($tempfile);
+
+        // Check status of errors and results.
+        $exit = false;
+        $errs = file_get_contents($errfile);
+        unlink($errfile);
+        if (!empty($errs)) {
+            $exit = true;
+        }
+
+        if ($rawresults) { // We got a result, check it for sanity.
+            $resultobject = json_decode($rawresults);
+            if ($resultobject == []) {
+                // FFprobe must have errored and returned empty JSON.
+                $exit = true;
+            } else if (empty($resultobject)) {
+                // FFprobe returned malformed or non JSON string.
+                $exit = true;
+                // If stderr errors is empty, lets try to get some info.
+                if (empty($errs)) {
+                    $errs = $rawresults;
+                }
+            }
+        } else {
+            $exit = true;
+        }
+
+        if ($exit) {
+            $metadata['reason'] = $errs;
+            return $metadata;  // Return early if we couldn't get any data from FFProbe.
+        }
+
+        if ($resultobject) {
+            $metadata = $this->decode_ffprobe_json($resultobject);
+        } else {
+            $metadata['reason'] = 'JSON Decoding failed';
+        }
+
+        return $metadata;
+    }
+}
